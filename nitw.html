@@ -9,7 +9,6 @@
             margin: 0;
         }
     </style>
-    <script src="jscolor.js"></script>
 </head>
 <body>
  
@@ -30,7 +29,6 @@
 
         scene: {
             preload: preload,
-            create: create,
             update: update,
             create: create,
         }
@@ -41,7 +39,10 @@
 
     function preload ()
     {
-        //var loading = this.add.image(500,300, 'loading');
+
+        /*****************************************
+                  LOADING scene
+        ******************************************/
 
         var lbg = this.add.graphics();
         lbg.fillStyle(0x96DCF7, 1);
@@ -193,6 +194,9 @@
             cat1.fillRect(474,413,6,10);
             cat1.fillRect(492,413,6,10);
 
+        /*************************************************
+                    ASSET LOADING
+        *************************************************/
 
 
         //bgs
@@ -271,6 +275,49 @@
 
 
         //accessories
+        this.load.spritesheet('nillicon', 'assets/nillicon.png', { frameWidth: 297, frameHeight: 497});
+        this.load.spritesheet('a0',  'assets/a0.png', { frameWidth: 297, frameHeight: 497});
+
+        this.load.spritesheet('a1', 'assets/a1.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a2', 'assets/a2.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('a3', 'assets/a3.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a4', 'assets/a4.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a5', 'assets/a5.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a6', 'assets/a6.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a7', 'assets/a7.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('a8', 'assets/a8.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a9', 'assets/a9.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a10', 'assets/a10.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a11', 'assets/a11.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a12', 'assets/a12.png', { frameWidth: 297, frameHeight: 497} );
+        
+        this.load.spritesheet('a13', 'assets/a13.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a14', 'assets/a14.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a15', 'assets/a15.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a16', 'assets/a16.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a17', 'assets/a17.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a18', 'assets/a18.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a19', 'assets/a19.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a20', 'assets/a20.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('a21', 'assets/a21.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('a22', 'assets/a22.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a23', 'assets/a23.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a24', 'assets/a24.png', { frameWidth: 297, frameHeight: 497} ); 
+        
+        this.load.spritesheet('a25', 'assets/a25.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a26', 'assets/a26.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a27', 'assets/a27.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a28', 'assets/a28.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a29', 'assets/a29.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a30', 'assets/a30.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a31', 'assets/a31.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a32', 'assets/a32.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a33', 'assets/a33.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a34', 'assets/a34.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a35', 'assets/a35.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('a36', 'assets/a36.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        
+
 
 
         //backgrounds
@@ -293,8 +340,11 @@
         //other text
         this.load.image('titletxt', 'assets/texttitle.png');
         this.load.image('creditstxt', 'assets/textcredits.png');
+        this.load.image('1txt', 'assets/text1.png');
+        this.load.image('2txt', 'assets/text2.png');
+        this.load.image('3txt', 'assets/text3.png');
         //music
-        //this.load.audio('music', 'assets/possumsprings.mp3');
+      //  this.load.audio('music', 'assets/possumsprings.mp3');
     }
 
     function create ()
@@ -309,7 +359,7 @@
 		bg = this.add.image(500,300,'bg');
 
 //        var music = this.sound.add('music');
-  //      music.play();
+//        music.play();
 
         //Title/credits
         this.add.image(500,80, 'titletxt');
@@ -322,6 +372,14 @@
         bottomtxt = text.create(530, 320, 'bottomtxt').setInteractive();
         accessoriestxt = text.create(530, 370, 'accessoriestxt').setInteractive();
         bgtext = text.create(530, 420, 'bgtext').setInteractive();
+
+        txtone = text.create(560, 480, '1txt').setInteractive().setScale(1.5);
+        txttwo = text.create(610, 480, '2txt').setInteractive().setScale(1.5);
+        txtthree = text.create(660, 480, '3txt').setInteractive().setScale(1.5);
+
+        setActivity(txtone, false);
+        setActivity(txttwo, false);
+        setActivity(txtthree, false);
 
         //arrows
 		leftArrow = arrows.create(650,290, 'leftarrow').setInteractive();
@@ -404,9 +462,9 @@
         playerbottom = this.physics.add.sprite(200,370, bottomKey).setInteractive().setTint(0x17202a);
         playerUnderTop = this.physics.add.sprite(200,370, underTopKey).setInteractive();
         playertop = this.physics.add.sprite(200,370, topKey).setInteractive().setTint(0xca6f1e);
-        //playeraccessory1;
-        //playeraccessory2;
-        //playeraccessory3;
+        playeraccessory = this.physics.add.sprite(200,320, accessoryKey[0]).setInteractive();
+        playeraccessory2 = this.physics.add.sprite(200,320, accessoryKey[1]).setInteractive();
+        playeraccessory3 = this.physics.add.sprite(200,320, accessoryKey[2]).setInteractive();
         //playerbg;
 
 
@@ -489,7 +547,51 @@
 
 
         //accessories    
-    
+        //page1
+        a1icon = this.add.image(720, 160, 'a1').setScale(.15).setInteractive();
+        a2icon = this.add.image(800, 160, 'a2').setScale(.15).setInteractive();
+        a3icon = this.add.image(880, 160, 'a3').setScale(.15).setInteractive();
+        a4icon = this.add.image(720, 230, 'a4').setScale(.15).setInteractive();
+        a5icon = this.add.image(800, 230, 'a5').setScale(.15).setInteractive();
+        a6icon = this.add.image(880, 230, 'a6').setScale(.15).setInteractive();
+        a7icon = this.add.image(720, 330, 'a7').setScale(.15).setInteractive();
+        a8icon = this.add.image(800, 330, 'a8').setScale(.15).setInteractive();
+        a9icon = this.add.image(880, 330, 'a9').setScale(.15).setInteractive();
+        a10icon = this.add.image(720, 420, 'a10').setScale(.15).setInteractive();
+        a11icon = this.add.image(800, 420, 'a11').setScale(.15).setInteractive();
+        a12icon = this.add.image(880, 420, 'a12').setScale(.15).setInteractive();
+        
+        //page2
+        a13icon = this.add.image(720, 160, 'a13').setScale(.15).setInteractive();
+        a14icon = this.add.image(800, 180, 'a14').setScale(.15).setInteractive();
+        a15icon = this.add.image(880, 160, 'a15').setScale(.15).setInteractive();
+        a16icon = this.add.image(720, 250, 'a16').setScale(.15).setInteractive();
+        a17icon = this.add.image(800, 230, 'a17').setScale(.15).setInteractive();
+        a18icon = this.add.image(880, 230, 'a18').setScale(.15).setInteractive();
+        a19icon = this.add.image(720, 350, 'a19').setScale(.15).setInteractive();
+        a20icon = this.add.image(880, 330, 'a20').setScale(.15).setInteractive();
+        a21icon = this.add.image(800, 330, 'a21').setScale(.15).setInteractive();
+        a22icon = this.add.image(720, 420, 'a22').setScale(.15).setInteractive();
+        a23icon = this.add.image(800, 420, 'a23').setScale(.15).setInteractive();
+        a24icon = this.add.image(880, 400, 'a24').setScale(.15).setInteractive();
+        
+        //page3
+        a25icon = this.add.image(720, 160, 'a25').setScale(.15).setInteractive();
+        a26icon = this.add.image(800, 160, 'a26').setScale(.15).setInteractive();
+        a27icon = this.add.image(880, 180, 'a27').setScale(.15).setInteractive();
+        a28icon = this.add.image(720, 260, 'a28').setScale(.15).setInteractive();
+        a29icon = this.add.image(800, 250, 'a29').setScale(.15).setInteractive();
+        a30icon = this.add.image(880, 250, 'a30').setScale(.15).setInteractive();
+        a31icon = this.add.image(720, 320, 'a31').setScale(.15).setInteractive();
+        a32icon = this.add.image(800, 320, 'a32').setScale(.15).setInteractive();
+        a33icon = this.add.image(880, 320, 'a33').setScale(.15).setInteractive();
+        a34icon = this.add.image(720, 420, 'a34').setScale(.15).setInteractive();
+        a35icon = this.add.image(800, 420, 'a35').setScale(.15).setInteractive();
+        a36icon = this.add.image(880, 420, 'a36').setScale(.15).setInteractive();
+        
+        //page4
+        a0icon = this.add.image(720,160, 'nillicon').setScale(.1).setInteractive();
+
         //bgs
 
 
@@ -515,41 +617,43 @@
         bottomtxt.on('pointerdown', function (pointer, bottomtxt) { selection = 4; page = 0; });   
         accessoriestxt.on('pointerdown', function (pointer, accessoriestxt) { selection = 5; page = 0; });   
         bgtext.on('pointerdown', function (pointer, bgtext) { selection = 6; page = 0; });   
-
+        txtone.on('pointerdown', function (pointer, txtone) { accessoryIndex = 0; page = 0; });   
+        txttwo.on('pointerdown', function (pointer, txttwo) { accessoryIndex = 1; page = 0;});   
+        txtthree.on('pointerdown', function (pointer, txtthree) { accessoryIndex = 2; page = 0; });   
 
         //click colour tiles
         red.on('pointerdown', function (pointer, red) { currentobj.setTint(0xe6b0aa); });
         orange.on('pointerdown', function (pointer, orange) { currentobj.setTint(0xf8c471); });
         yellow.on('pointerdown', function (pointer, yellow){ currentobj.setTint(0xf7dc6f);  });
-        green.on('pointerdown', function(pointer, green){ currentobj.setTint(0x7dcea0);  });
-        lightblue.on('pointerdown', function(pointer, lightblue){ currentobj.setTint(0xa9cce3);  });
-        brown.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xe59866);  });
-        purple.on('pointerdown', function(pointer, purple){ currentobj.setTint(0xe8daef);  });
-        pink.on('pointerdown', function(pointer, pink){ currentobj.setTint(0xf5cba7);  });
-        white.on('pointerdown', function(pointer, white){ currentobj.setTint(0xFFFFFF);  });
-        black.on('pointerdown', function(pointer, black){ currentobj.setTint(0xb2babb);  });
+        green.on('pointerdown', function(pointer, green){ currentobj.setTint(0x7dcea0);}  );
+        lightblue.on('pointerdown', function(pointer, lightblue){ currentobj.setTint(0xa9cce3);});
+        brown.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xe59866);}  );
+        purple.on('pointerdown', function(pointer, purple){ currentobj.setTint(0xe8daef);}  );
+        pink.on('pointerdown', function(pointer, pink){ currentobj.setTint(0xf5cba7); } );
+        white.on('pointerdown', function(pointer, white){ currentobj.setTint(0xFFFFFF); } );
+        black.on('pointerdown', function(pointer, black){ currentobj.setTint(0xb2babb);}  );
 
-        red2.on('pointerdown', function (pointer, red2) { currentobj.setTint(0xc0392b); });
-        orange2.on('pointerdown', function (pointer, orange2) { currentobj.setTint(0xf39c12); });
-        yellow2.on('pointerdown', function (pointer, yellow2){ currentobj.setTint(0xf4d03f);  });
-        green2.on('pointerdown', function(pointer, green2){ currentobj.setTint(0x52be80);  });
-        lightblue2.on('pointerdown', function(pointer, lightblue2){ currentobj.setTint(0x2980b9);  });
-        brown2.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xca6f1e);  });
-        purple2.on('pointerdown', function(pointer, purple2){ currentobj.setTint(0x6F5F78);  });
+        red2.on('pointerdown', function (pointer, red2) { currentobj.setTint(0xc0392b);} );
+        orange2.on('pointerdown', function (pointer, orange2) { currentobj.setTint(0xf39c12);} );
+        yellow2.on('pointerdown', function (pointer, yellow2){ currentobj.setTint(0xf4d03f);}  );
+        green2.on('pointerdown', function(pointer, green2){ currentobj.setTint(0x52be80);}  );
+        lightblue2.on('pointerdown', function(pointer, lightblue2){ currentobj.setTint(0x2980b9);}  );
+        brown2.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xca6f1e); } );
+        purple2.on('pointerdown', function(pointer, purple2){ currentobj.setTint(0x6F5F78);}  );
         pink2.on('pointerdown', function(pointer, pink2){ currentobj.setTint(0xD6A16B);  });
-        white2.on('pointerdown', function(pointer, white2){ currentobj.setTint(0xd0d3d4);  });
+        white2.on('pointerdown', function(pointer, white2){ currentobj.setTint(0xd0d3d4); } );
         black2.on('pointerdown', function(pointer, black2){ currentobj.setTint(0x707b7c);  });
 
         red3.on('pointerdown', function (pointer, red3) { currentobj.setTint(0x85251B); });
         orange3.on('pointerdown', function (pointer, orange3) { currentobj.setTint(0x874E0F); });
-        yellow3.on('pointerdown', function (pointer, yellow3){ currentobj.setTint(0xB2B037);  });
-        green3.on('pointerdown', function(pointer, green3){ currentobj.setTint(0x4C7940);  });
-        lightblue3.on('pointerdown', function(pointer, lightblue3){ currentobj.setTint(0x154360);  });
-        brown3.on('pointerdown', function(pointer, brown3){ currentobj.setTint(0xaf601a);  });
-        purple3.on('pointerdown', function(pointer, purple3){ currentobj.setTint(0x512e5f);  });
-        pink3.on('pointerdown', function(pointer, pink3){ currentobj.setTint(0xf8c471);  });
-        white3.on('pointerdown', function(pointer, white3){ currentobj.setTint(0x7f8c8d);  });
-        black3.on('pointerdown', function(pointer, black3){ currentobj.setTint(0x17202a);  });
+        yellow3.on('pointerdown', function (pointer, yellow3){ currentobj.setTint(0xB2B037); } );
+        green3.on('pointerdown', function(pointer, green3){ currentobj.setTint(0x4C7940); } );
+        lightblue3.on('pointerdown', function(pointer, lightblue3){ currentobj.setTint(0x154360); } );
+        brown3.on('pointerdown', function(pointer, brown3){ currentobj.setTint(0xaf601a);}  );
+        purple3.on('pointerdown', function(pointer, purple3){ currentobj.setTint(0x512e5f); } );
+        pink3.on('pointerdown', function(pointer, pink3){ currentobj.setTint(0xf8c471); } );
+        white3.on('pointerdown', function(pointer, white3){ currentobj.setTint(0x7f8c8d); } );
+        black3.on('pointerdown', function(pointer, black3){ currentobj.setTint(0x17202a); } );
 
 
 
@@ -617,6 +721,45 @@
 */
 
         //click accessories
+        a0icon.on('pointerdown', function(pointer, a0icon){accessoryKey[accessoryIndex] = 'a0'; playeraccessory.anims.stop();});
+        a1icon.on('pointerdown', function(pointer, a1icon){accessoryKey[accessoryIndex] = 'a1'; playeraccessory.anims.stop();});
+        a2icon.on('pointerdown', function(pointer, a2icon){accessoryKey[accessoryIndex] = 'a2'; playeraccessory.anims.stop(); });
+        a3icon.on('pointerdown', function(pointer, a3icon){accessoryKey[accessoryIndex] = 'a3'; playeraccessory.anims.stop();});
+        a4icon.on('pointerdown', function(pointer, a4icon){accessoryKey[accessoryIndex] = 'a4'; playeraccessory.anims.stop();});
+        a5icon.on('pointerdown', function(pointer, a5icon){accessoryKey[accessoryIndex] = 'a5'; playeraccessory.anims.stop();});
+        a6icon.on('pointerdown', function(pointer, a6icon){accessoryKey[accessoryIndex] = 'a6'; playeraccessory.anims.stop();});
+        a7icon.on('pointerdown', function(pointer, a7icon){accessoryKey[accessoryIndex] = 'a7'; playeraccessory.anims.stop();});
+        a8icon.on('pointerdown', function(pointer, a8icon){accessoryKey[accessoryIndex] = 'a8'; playeraccessory.anims.stop();});
+        a9icon.on('pointerdown', function(pointer, a9icon){accessoryKey[accessoryIndex] = 'a9'; playeraccessory.anims.stop();});
+        a10icon.on('pointerdown', function(pointer, a10icon){accessoryKey[accessoryIndex] = 'a10'; playeraccessory.anims.stop();});
+        a11icon.on('pointerdown', function(pointer, a11icon){accessoryKey[accessoryIndex] = 'a11'; playeraccessory.anims.stop();});
+        a12icon.on('pointerdown', function(pointer, a12icon){accessoryKey[accessoryIndex] = 'a12'; playeraccessory.anims.stop();});
+
+        a13icon.on('pointerdown', function(pointer, a13icon){accessoryKey[accessoryIndex] = 'a13'; playeraccessory.anims.stop();});
+        a14icon.on('pointerdown', function(pointer, a14icon){accessoryKey[accessoryIndex] = 'a14'; playeraccessory.anims.stop();});
+        a15icon.on('pointerdown', function(pointer, a15icon){accessoryKey[accessoryIndex] = 'a15'; playeraccessory.anims.stop();});
+        a16icon.on('pointerdown', function(pointer, a16icon){accessoryKey[accessoryIndex] = 'a16'; playeraccessory.anims.stop();});
+        a17icon.on('pointerdown', function(pointer, a17icon){accessoryKey[accessoryIndex] = 'a17'; playeraccessory.anims.stop();});
+        a18icon.on('pointerdown', function(pointer, a18icon){accessoryKey[accessoryIndex] = 'a18'; playeraccessory.anims.stop();});
+        a19icon.on('pointerdown', function(pointer, a19icon){accessoryKey[accessoryIndex] = 'a19'; playeraccessory.anims.stop();});
+        a20icon.on('pointerdown', function(pointer, a20icon){accessoryKey[accessoryIndex] = 'a20'; playeraccessory.anims.stop();});
+        a21icon.on('pointerdown', function(pointer, a21icon){accessoryKey[accessoryIndex] = 'a21'; playeraccessory.anims.stop();});
+        a22icon.on('pointerdown', function(pointer, a22icon){accessoryKey[accessoryIndex] = 'a22'; playeraccessory.anims.stop();});
+        a23icon.on('pointerdown', function(pointer, a23icon){accessoryKey[accessoryIndex] = 'a23'; playeraccessory.anims.stop();});
+        a24icon.on('pointerdown', function(pointer, a24icon){accessoryKey[accessoryIndex] = 'a24'; playeraccessory.anims.stop();});
+
+        a25icon.on('pointerdown', function(pointer, a25icon){accessoryKey[accessoryIndex] = 'a25'; playeraccessory.anims.stop();});
+        a26icon.on('pointerdown', function(pointer, a26icon){accessoryKey[accessoryIndex] = 'a26'; playeraccessory.anims.stop();});
+        a27icon.on('pointerdown', function(pointer, a27icon){accessoryKey[accessoryIndex] = 'a27'; playeraccessory.anims.stop();});
+        a28icon.on('pointerdown', function(pointer, a28icon){accessoryKey[accessoryIndex] = 'a28'; playeraccessory.anims.stop();});
+        a29icon.on('pointerdown', function(pointer, a29icon){accessoryKey[accessoryIndex] = 'a29'; playeraccessory.anims.stop();});
+        a30icon.on('pointerdown', function(pointer, a30icon){accessoryKey[accessoryIndex] = 'a30'; playeraccessory.anims.stop();});
+        a31icon.on('pointerdown', function(pointer, a31icon){accessoryKey[accessoryIndex] = 'a31'; playeraccessory.anims.stop();});
+        a32icon.on('pointerdown', function(pointer, a32icon){accessoryKey[accessoryIndex] = 'a32'; playeraccessory.anims.stop();});
+        a33icon.on('pointerdown', function(pointer, a33icon){accessoryKey[accessoryIndex] = 'a33'; playeraccessory.anims.stop();});
+        a34icon.on('pointerdown', function(pointer, a34icon){accessoryKey[accessoryIndex] = 'a34'; playeraccessory.anims.stop();});
+        a35icon.on('pointerdown', function(pointer, a35icon){accessoryKey[accessoryIndex] = 'a35'; playeraccessory.anims.stop();});
+        a36icon.on('pointerdown', function(pointer, a36icon){accessoryKey[accessoryIndex] = 'a36'; playeraccessory.anims.stop();});
 
 
         //click backgrounds
@@ -663,6 +806,20 @@
                 repeat: -1
             });
         }
+
+        var accessories = ['a0','a1','a2','a3','a4','a5','a6','a7','a8','a9','a10','a11','a12' 
+        ,'a13','a14','a15','a16','a17','a18','a19','a20','a21','a22','a23' ,'a24'
+        ,'a25','a26','a27','a28','a29','a30','a31','a32','a33','a34','a35', 'a36'];
+        for(var i = 0; i < accessories.length; i++){
+            this.anims.create({
+                key: accessories[i],
+                frames: this.anims.generateFrameNumbers(accessories[i], { start: 0, end: 0 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }
+
+        
     
 
     }
@@ -724,11 +881,10 @@
         playerbottom.anims.play(bottomKey, true);
     }
 
-    function setAccessories(accessoryKeys){
- /*     playeraccessory1.anims.play(acessoryKeys[0]);
-        playeraccessory2.anims.play(accessoryKey[1]);
-        playeraccessory3.anims.play(accessoryKey[2]);
- */
+    function setAccessories(accessoryKey){
+      playeraccessory.anims.play(accessoryKey[0]);
+      playeraccessory2.anims.play(accessoryKey[1]);
+      playeraccessory3.anims.play(accessoryKey[2]);
     }
     function setBg(bgKey){
 //        playerbg.anims.play(bgKey);
@@ -762,13 +918,21 @@
             [],
             []
          ];
-        var accessoriesIcons= [ [], [], []];
+        var accessoriesIcons= [ 
+            [a0icon,a2icon,a3icon,a4icon,a5icon,a6icon,a7icon,a8icon,a9icon,a10icon,a11icon,a12icon],
+            [a13icon,a14icon,a15icon,a16icon,a17icon,a18icon,a19icon,a20icon,a21icon,a22icon,a23icon,a24icon],
+            [a25icon,a26icon,a27icon,a28icon,a29icon,a30icon,a31icon,a32icon,a33icon,a34icon,a35icon,a36icon],
+            [a1icon]
+            ];
 
         var bgIcons= [ [], [], [] ];
 
         var allIcons = [bodyIcons, eyeIcons, topIcons, bottomIcons, accessoriesIcons, bgIcons]; 
 
         var textIcons = [bodytxt, eyestxt, toptxt, bottomtxt, accessoriestxt, bgtext];
+        
+        //accessory index icons
+        var txtelems = [txtone, txttwo, txtthree];
 
         //body selection
         if(selection == 1){  
@@ -777,6 +941,7 @@
             pageCtrl(page, bodyIcons.length);
             console.log('selection 1 page:' + page);
             setJustOne(allIcons, bodyIcons, page);
+            setAllActivity(txtelems, false);
         }
         //eyes selection
         if(selection == 2){
@@ -785,6 +950,7 @@
             pageCtrl(page, eyeIcons.length);
             console.log('selection 2 page:' + page);
             setJustOne(allIcons, eyeIcons, page);
+            setAllActivity(txtelems, false);
         }
         //top section
         if(selection == 3){
@@ -793,6 +959,7 @@
             pageCtrl(page, topIcons.length);
             console.log('selection 3 page:' + page);
             setJustOne(allIcons, topIcons, page);
+            setAllActivity(txtelems, false);
         }
         //bottom section
         if(selection == 4){
@@ -801,11 +968,14 @@
             pageCtrl(page, bottomIcons.length);
             console.log('selection 4 page:' + page);
             setJustOne(allIcons, bottomIcons, page);
+            setAllActivity(txtelems, false);
         }
         //accessories section
         if(selection == 5){
-           // currentobj = playeraccessory;
+            currentobj = playeraccessory;
+            setAllActivity(txtelems, true);
             selected(accessoriestxt, textIcons);
+            selected(txtelems[accessoryIndex], txtelems);
             pageCtrl(page, accessoriesIcons.length);
             console.log('selection 5 page:' + page);
             setJustOne(allIcons, accessoriesIcons, page);
@@ -817,6 +987,7 @@
             pageCtrl(page, bgIcons.length);
             console.log('selection 6 page:' + page);
             setJustOne(allIcons, bgIcons, page);
+            setAllActivity(txtelems, false);
         }
     }
 
@@ -831,7 +1002,8 @@
     underTopKey = 'blank';
     bottomKey = 'bottom1';
     bgKey = 'bg';
-    accessoryKeys = [];
+    accessoryKey = ['a0','a0','a0'];
+    accessoryIndex = 0;
 
     //Game Main
     function update ()
@@ -842,8 +1014,12 @@
         playBody(bodyKey);                    //body
         playFace(facekey);                    //face/ eyes
         setTop(topKey, underTopKey);
-        setBottoms(bottomKey);               
+        setBottoms(bottomKey);   
+        setAccessories(accessoryKey);            
 
+        if(currentobj == playeraccessory){
+            currentobj.clearTint();   
+        }
 
 
     }
