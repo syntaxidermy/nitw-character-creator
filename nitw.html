@@ -1,0 +1,854 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>Night in the Woods Character Creator</title>
+    <script src="phaser.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+    <script src="jscolor.js"></script>
+</head>
+<body>
+ 
+<script type="text/javascript">
+
+
+    var config = {
+        type: Phaser.AUTO,
+        width: 1000,
+        height: 600,
+		physics: {
+			default: 'arcade',
+			arcade: {
+				gravity: {y:0},
+				debug: false
+			}
+		},
+
+        scene: {
+            preload: preload,
+            create: create,
+            update: update,
+            create: create,
+        }
+    };
+
+    var game = new Phaser.Game(config);
+
+
+    function preload ()
+    {
+        //var loading = this.add.image(500,300, 'loading');
+
+        var lbg = this.add.graphics();
+        lbg.fillStyle(0x96DCF7, 1);
+        lbg.fillRect(0,0,1000, 600);
+
+        lbg.fillStyle(0x0088D1,1);
+        lbg.fillRect(0,570,1000,30);
+        
+        lbg.fillStyle(0x00D79A, 1);
+        lbg.fillRect(895,570, 105,30);
+
+        lbg.fillStyle(0x246B74, 1);
+        lbg.fillRect(910, 140, 65,65);
+
+        lbg.fillStyle(0xD12723);
+        lbg.fillRect(910, 220, 65, 65);
+
+        lbg.fillStyle(0xA1A4C);
+        lbg.fillRect(910, 300, 65, 65);
+
+        lbg.fillStyle(0x74A44D);
+        lbg.fillRect(910, 380, 65, 65);
+
+        var window = this.add.graphics();
+        window.fillStyle(0x273C94, 1);
+        window.fillRect(215,110,570,449);
+
+        var inwindow = this.add.graphics();
+        inwindow.fillStyle(0x000000, 1);
+        inwindow.fillRect(223,138,554, 417);
+
+        var min = this.add.graphics();
+        min.fillStyle(0xEAD9C9);        
+        min.fillRect(705,120,21,15);
+        
+        var sq = this.add.graphics();
+        sq.fillStyle(0xEAD9C9);
+        sq.fillRect(728,120,21,15);
+
+        var x = this.add.graphics();
+        x.fillStyle(0xEAD9C9);
+        x.fillRect(751,120,21,15);
+
+        var nitwText = this.make.text({
+            x: 420,
+            y: 120,
+            text: 'NITW Character Creator',
+            style: {
+                font: '30px monospace courier new',
+                fill: '#ffffff'
+            }
+        });
+
+        var ox = this.make.text({
+            x: 705,
+            y: 120,
+            text: '   -      o     x',
+            style: {
+                font: '60px',
+                fill: '#000000'
+            }
+        });
+
+        var progressBar = this.add.graphics();
+            var progressBox = this.add.graphics();
+            progressBox.fillStyle(0x222222, 0.8);
+            progressBox.fillRect(320, 270, 320, 50);
+            
+            var width = this.cameras.main.width;
+            var height = this.cameras.main.height;
+
+            var loadingText = this.make.text({
+                x: 500,
+                y: height / 2 - 50,
+                text: 'Loading...',
+                style: {
+                    font: '20px monospace',
+                    fill: '#ffffff'
+                }
+            });
+
+            loadingText.setOrigin(0.5, 0.5);
+            
+            var percentText = this.make.text({
+                x: width / 2,
+                y: height / 2 - 5,
+                text: '0%',
+                style: {
+                    font: '18px monospace',
+                    fill: '#ffffff'
+                }
+            });
+            percentText.setOrigin(0.5, 0.5);
+            
+            var assetText = this.make.text({
+                x: width / 2,
+                y: height / 2 + 50,
+                text: '',
+                style: {
+                    font: '18px monospace',
+                    fill: '#ffffff'
+                }
+            });
+ 
+            assetText.setOrigin(0.5, 0.5);
+            
+            this.load.on('progress', function (value) {
+                percentText.setText(parseInt(value * 100) + '%');
+                progressBar.clear();
+                progressBar.fillStyle(0xffffff, 1);
+                progressBar.fillRect(330, 280, 300 * value, 30);
+            });
+            
+            this.load.on('fileprogress', function (file) {
+                assetText.setText('Loading asset: ' + file.key);
+            });
+ 
+            this.load.on('complete', function () {
+                progressBar.destroy();
+                progressBox.destroy();
+                loadingText.destroy();
+                percentText.destroy();
+                assetText.destroy();
+                lbg.destroy();
+            }); 
+
+
+           var cat1 = this.add.graphics();
+           cat1.fillStyle(0x005A8C, 1);
+           cat1.fillRect(470,400, 40, 12);
+           cat1.fillRect(472,412, 37, 14);
+           cat1.fillRect(474,426, 34, 4);
+           cat1.fillRect(476,430, 31, 2);
+           cat1.fillRect(478,431,27,2);
+           cat1.fillRect(480,433,20,2);
+
+            cat1.fillStyle(0x000000,1);
+           cat1.fillRect(477,400,25,3);
+            cat1.fillRect(479,403,20,2)
+
+            cat1.fillStyle(0x55FEF2);
+            cat1.fillRect(480,413,6,10);
+            cat1.fillRect(498,413,6,10);
+            
+            cat1.fillRect(486,426,7,3);
+            cat1.fillRect(489, 428, 2, 2);
+
+            cat1.fillStyle(0xE4007B);
+            cat1.fillRect(474,413,6,10);
+            cat1.fillRect(492,413,6,10);
+
+
+
+        //bgs
+		this.load.image('bg', 'assets/bg.png');
+		
+        //bodies
+        this.load.spritesheet('catbody', 'assets/catbody.png', { frameWidth: 297, frameHeight: 397 });
+        
+        //eye sprites
+        this.load.spritesheet('cateyes', 'assets/catpupils.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catface', 'assets/catface.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacegoth', 'assets/catfacegoth.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfaceshifty', 'assets/catfaceshifty.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacesad', 'assets/catfacesad.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacewide', 'assets/catfacewide.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfaceanime', 'assets/catfaceanime.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacelashes', 'assets/catfacelashes.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacebigeyes', 'assets/catfacebigeyes.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfacenightmare', 'assets/catfacenightmare.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('catfaceeyeliner', 'assets/catfaceeyeliner.png', { frameWidth: 297, frameHeight: 397});
+        
+
+
+
+        //tops
+        this.load.spritesheet('blank', 'assets/topsblankunder.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('top5under', 'assets/top5under.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('top6under', 'assets/top6under.png', { frameWidth: 297, frameHeight: 397});
+        this.load.spritesheet('top10under', 'assets/top10under.png', { frameWidth: 297, frameHeight: 397});
+        
+
+
+        this.load.spritesheet('top1', 'assets/top1.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top2', 'assets/top2.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top3', 'assets/top3.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top4', 'assets/top4.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top5', 'assets/top5.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top6', 'assets/top6.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top7', 'assets/top7.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top8', 'assets/top8.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top9', 'assets/top9.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top10', 'assets/top10.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top11', 'assets/top11.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top12', 'assets/top12.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('topPineapple', 'assets/topPineapple.png', {frameWidth: 297, frameHeight: 397 });
+        this.load.spritesheet('top13', 'assets/top13.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top14', 'assets/top14.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top15', 'assets/top15.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top16', 'assets/top16.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top17', 'assets/top17.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top18', 'assets/top18.png', { frameWidth: 297, frameHeight: 397} );
+/*        this.load.spritesheet('top19', 'assets/top18.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top20', 'assets/top19.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top21', 'assets/top20.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('top22', 'assets/top21.png', { frameWidth: 297, frameHeight: 397} );
+
+
+
+
+
+*/
+        //bottoms
+        this.load.spritesheet('bottom1', 'assets/bottom1.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom2', 'assets/bottoms2.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom3', 'assets/bottoms3.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom4', 'assets/bottoms4.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom5', 'assets/bottoms5.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom6', 'assets/bottoms6.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom7', 'assets/bottoms7.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom8', 'assets/bottoms8.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottom9', 'assets/bottoms9.png', { frameWidth: 297, frameHeight: 397} );
+/*
+        this.load.spritesheet('bottoms1', 'assets/bottoms1.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('bottoms1', 'assets/bottoms1.png', { frameWidth: 297, frameHeight: 397} );
+*/
+
+
+        //accessories
+
+
+        //backgrounds
+
+
+
+        //arrows
+        this.load.image('leftarrow','assets/arrowleft.png');
+        this.load.image('rightarrow', 'assets/arrowright.png');
+        //tiles
+        this.load.image('tile', 'assets/tile.png');
+        this.load.image('smalltile', 'assets/tilesmall.png');
+        //text menu
+        this.load.image('bodytext', 'assets/textbody.png');
+        this.load.image('eyestext', 'assets/texteyes.png');
+        this.load.image('toptxt', 'assets/texttop.png');
+        this.load.image('bottomtxt', 'assets/textbottom.png');
+        this.load.image('accessoriestxt', 'assets/textaccessories.png');
+        this.load.image('bgtext', 'assets/textbg.png');
+        //other text
+        this.load.image('titletxt', 'assets/texttitle.png');
+        this.load.image('creditstxt', 'assets/textcredits.png');
+        //music
+        //this.load.audio('music', 'assets/possumsprings.mp3');
+    }
+
+    function create ()
+    {
+        
+
+        tiles = this.physics.add.staticGroup();
+        arrows = this.physics.add.staticGroup();
+        smalltiles = this.physics.add.staticGroup();
+        text = this.physics.add.staticGroup();
+
+		bg = this.add.image(500,300,'bg');
+
+//        var music = this.sound.add('music');
+  //      music.play();
+
+        //Title/credits
+        this.add.image(500,80, 'titletxt');
+        this.add.image(720,560, 'creditstxt').setScale(.75);
+
+        //text menu options
+        bodytxt = text.create(500, 170, 'bodytext').setInteractive();
+        eyestxt = text.create(500, 220, 'eyestext').setInteractive();
+        toptxt = text.create(530, 270, 'toptxt').setInteractive();
+        bottomtxt = text.create(530, 320, 'bottomtxt').setInteractive();
+        accessoriestxt = text.create(530, 370, 'accessoriestxt').setInteractive();
+        bgtext = text.create(530, 420, 'bgtext').setInteractive();
+
+        //arrows
+		leftArrow = arrows.create(650,290, 'leftarrow').setInteractive();
+        rightArrow = arrows.create(950,290, 'rightarrow').setInteractive();
+
+        //menu tiles
+        tiles.create(720, 170, 'tile');
+        tiles.create(800, 250, 'tile');
+        tiles.create(880, 330, 'tile');
+        tiles.create(880, 410, 'tile');
+
+        tiles.create(720, 330, 'tile');
+        tiles.create(800, 170, 'tile');
+        tiles.create(880, 250, 'tile');        
+        tiles.create(800, 410, 'tile');
+
+        tiles.create(720, 250, 'tile');
+        tiles.create(800, 330, 'tile');
+        tiles.create(880, 170, 'tile');        
+        tiles.create(720, 410, 'tile');
+
+
+        
+        /*****************************************************************************************************
+
+        //COLOUR ICONS
+
+        *****************************************************************************************************/
+
+        //colour tile objects
+        red = smalltiles.create(696, 460, 'smalltile').setTint(0xe6b0aa).setInteractive();      
+        orange = smalltiles.create(719, 460, 'smalltile').setTint(0xf8c471).setInteractive();
+        yellow = smalltiles.create(742, 460, 'smalltile').setTint(0xf7dc6f).setInteractive();
+        green = smalltiles.create(765, 460, 'smalltile').setTint(0x7dcea0).setInteractive();
+        lightblue = smalltiles.create(788, 460, 'smalltile').setTint(0xa9cce3).setInteractive();  
+        purple = smalltiles.create(811, 460, 'smalltile').setTint(0xe8daef).setInteractive();
+        pink = smalltiles.create(834, 460, 'smalltile').setTint(0xf5cba7).setInteractive();     
+        brown = smalltiles.create(857, 460, 'smalltile').setTint(0xe59866).setInteractive();
+        white = smalltiles.create(880, 460, 'smalltile').setTint(0xFFFFFF).setInteractive();
+        black = smalltiles.create(903, 460, 'smalltile').setTint(0xb2babb).setInteractive();
+    
+        red2 = smalltiles.create(696, 482, 'smalltile').setTint(0xc0392b).setInteractive();      
+        orange2 = smalltiles.create(719, 482, 'smalltile').setTint(0xf39c12).setInteractive();
+        yellow2 = smalltiles.create(742, 482, 'smalltile').setTint(0xf4d03f).setInteractive();
+        green2 = smalltiles.create(765, 482, 'smalltile').setTint(0x52be80).setInteractive();
+        lightblue2 = smalltiles.create(788, 482, 'smalltile').setTint(0x2980b9).setInteractive();     
+        purple2 = smalltiles.create(811, 482, 'smalltile').setTint(0x6F5F78).setInteractive();
+        pink2 = smalltiles.create(834, 482, 'smalltile').setTint(0xD6A16B).setInteractive();    
+        brown2 = smalltiles.create(857, 482, 'smalltile').setTint(0xca6f1e).setInteractive();
+        white2 = smalltiles.create(880, 482, 'smalltile').setTint(0xd0d3d4).setInteractive();
+        black2 = smalltiles.create(903, 482, 'smalltile').setTint(0x707b7c).setInteractive();
+    
+        red3 = smalltiles.create(696, 504, 'smalltile').setTint(0x85251B).setInteractive();      
+        orange3 = smalltiles.create(719, 504, 'smalltile').setTint(0x874E0F).setInteractive();
+        yellow3 = smalltiles.create(742, 504, 'smalltile').setTint(0xB2B037).setInteractive();
+        green3 = smalltiles.create(765, 504, 'smalltile').setTint(0x4C7940).setInteractive();
+        lightblue3 = smalltiles.create(788, 504, 'smalltile').setTint(0x154360).setInteractive();     
+        purple3 = smalltiles.create(811, 504, 'smalltile').setTint(0x512e5f).setInteractive();
+        pink3 = smalltiles.create(834, 504, 'smalltile').setTint(0xf8c471).setInteractive();    
+        brown3 = smalltiles.create(857, 504, 'smalltile').setTint(0xaf601a).setInteractive();
+        white3 = smalltiles.create(880, 504, 'smalltile').setTint(0x7f8c8d).setInteractive();
+        black3 = smalltiles.create(903, 504, 'smalltile').setTint(0x17202a).setInteractive();
+    
+        
+
+
+        
+        /*****************************************************************************************************
+
+        //PLAYER
+
+        *****************************************************************************************************/
+
+
+
+        //player layers
+		player = this.physics.add.sprite(200, 370, bodyKey).setInteractive().setTint(0x17202a);
+        playereyes = this.physics.add.sprite(260, 350, 'cateyes').setInteractive().setTint(0x85251B);
+        playerface = this.physics.add.sprite(260,350,facekey).setInteractive();
+        playerbottom = this.physics.add.sprite(200,370, bottomKey).setInteractive().setTint(0x17202a);
+        playerUnderTop = this.physics.add.sprite(200,370, underTopKey).setInteractive();
+        playertop = this.physics.add.sprite(200,370, topKey).setInteractive().setTint(0xca6f1e);
+        //playeraccessory1;
+        //playeraccessory2;
+        //playeraccessory3;
+        //playerbg;
+
+
+
+        /*****************************************************************************************************
+
+        //MENU ICONS
+
+        *****************************************************************************************************/
+
+        //MENU ICONS
+
+        //eyes page 1
+        normaleyeicon = this.add.image(735,185,'catface').setScale(0.25).setInteractive();
+        gotheyeicon = this.add.image(812,185, 'catfacegoth').setScale(0.25).setInteractive();
+        shifteyeicon = this.add.image(893,185, 'catfaceshifty').setScale(0.25).setInteractive();
+        
+        sadeyeicon = this.add.image(735, 260, 'catfacesad').setScale(0.25).setInteractive();
+        wideeyeicon = this.add.image(812, 260, 'catfacewide').setScale(0.25).setInteractive();
+        animeeyeicon = this.add.image(893, 260, 'catfaceanime').setScale(0.25).setInteractive();
+        
+        lashesicon = this.add.image(735, 340, 'catfacelashes').setScale(0.25).setInteractive();
+        bigeyesicon = this.add.image(812, 340, 'catfacebigeyes').setScale(0.25).setInteractive();
+        eyelinericon = this.add.image(893, 340, 'catfaceeyeliner').setScale(0.25).setInteractive();
+
+        nightmareeyesicon = this.add.image(735, 410, 'catfacenightmare').setScale(0.20).setInteractive();
+
+
+
+        //tops page 1
+        top1icon = this.add.image(720,160, 'top1').setScale(0.25).setInteractive();
+        top2icon = this.add.image(800,150, 'top2').setScale(0.25).setInteractive();
+        top3icon = this.add.image(880,150, 'top3').setScale(0.25).setInteractive();
+       
+        top4icon = this.add.image(720, 240, 'top4').setScale(0.25).setInteractive();
+        top5icon = this.add.image(800, 240, 'top5').setScale(0.25).setInteractive();
+        top6icon = this.add.image(880, 230, 'top6').setScale(0.25).setInteractive();
+       
+        top7icon = this.add.image(720, 320, 'top7').setScale(0.25).setInteractive();
+        top8icon = this.add.image(800, 310, 'top8').setScale(0.25).setInteractive();
+        top9icon = this.add.image(880, 310, 'top9').setScale(0.25).setInteractive();
+       
+        top10icon = this.add.image(720, 400, 'top10').setScale(0.25).setInteractive();
+        top11icon = this.add.image(800, 400, 'top11').setScale(0.25).setInteractive();
+        top12icon = this.add.image(880, 400, 'top12').setScale(0.25).setInteractive();
+    
+        //tops page2
+        topPineappleIcon = this.add.image(720, 160, 'topPineapple').setScale(0.25).setInteractive();
+        top13icon = this.add.image(800, 150, 'top13').setScale(0.25).setInteractive();
+        top14icon = this.add.image(880, 150, 'top14').setScale(0.25).setInteractive();
+
+        top15icon = this.add.image(720, 240, 'top15').setScale(0.25).setInteractive();
+        top16icon = this.add.image(800, 240, 'top16').setScale(0.25).setInteractive();
+        top17icon = this.add.image(880, 240, 'top17').setScale(0.25).setInteractive();
+
+        top18icon = this.add.image(720, 310, 'top18').setScale(0.25).setInteractive();
+
+//        top19icon = this.add.image(720, 400, 'top10').setScale(0.25).setInteractive();
+//        top20icon = this.add.image(800, 400, 'top11').setScale(0.25).setInteractive();
+//        top12icon = this.add.image(880, 400, 'top12').setScale(0.25).setInteractive();
+    
+
+
+
+
+
+        //bottoms
+        bottom1icon = this.add.image(720, 140, 'bottom1').setScale(0.25).setInteractive();
+        bottom2icon = this.add.image(800,130, 'bottom2').setScale(0.25).setInteractive();
+        bottom3icon = this.add.image(880,130, 'bottom3').setScale(0.25).setInteractive();
+       
+        bottom4icon = this.add.image(720, 210, 'bottom4').setScale(0.25).setInteractive();
+        bottom5icon = this.add.image(800, 210, 'bottom5').setScale(0.25).setInteractive();
+        bottom6icon = this.add.image(880, 200, 'bottom6').setScale(0.25).setInteractive();
+       
+        bottom7icon = this.add.image(720, 300, 'bottom7').setScale(0.25).setInteractive();
+        bottom8icon = this.add.image(800, 300, 'bottom8').setScale(0.25).setInteractive();
+        bottom9icon = this.add.image(880, 300, 'bottom9').setScale(0.25).setInteractive();
+    
+
+
+        //accessories    
+    
+        //bgs
+
+
+
+
+
+
+
+
+
+
+
+        /*****************************************************************************************************
+
+        //MOUSE INTERACTIONS
+
+        *****************************************************************************************************/
+
+        //click menu text
+        bodytxt.on('pointerdown', function (pointer, bodytxt) { selection = 1; page =0; });                
+        eyestxt.on('pointerdown', function (pointer, eyestxt) { selection = 2; page = 0; });   
+        toptxt.on('pointerdown', function (pointer, toptxt) { selection = 3; page = 0; });   
+        bottomtxt.on('pointerdown', function (pointer, bottomtxt) { selection = 4; page = 0; });   
+        accessoriestxt.on('pointerdown', function (pointer, accessoriestxt) { selection = 5; page = 0; });   
+        bgtext.on('pointerdown', function (pointer, bgtext) { selection = 6; page = 0; });   
+
+
+        //click colour tiles
+        red.on('pointerdown', function (pointer, red) { currentobj.setTint(0xe6b0aa); });
+        orange.on('pointerdown', function (pointer, orange) { currentobj.setTint(0xf8c471); });
+        yellow.on('pointerdown', function (pointer, yellow){ currentobj.setTint(0xf7dc6f);  });
+        green.on('pointerdown', function(pointer, green){ currentobj.setTint(0x7dcea0);  });
+        lightblue.on('pointerdown', function(pointer, lightblue){ currentobj.setTint(0xa9cce3);  });
+        brown.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xe59866);  });
+        purple.on('pointerdown', function(pointer, purple){ currentobj.setTint(0xe8daef);  });
+        pink.on('pointerdown', function(pointer, pink){ currentobj.setTint(0xf5cba7);  });
+        white.on('pointerdown', function(pointer, white){ currentobj.setTint(0xFFFFFF);  });
+        black.on('pointerdown', function(pointer, black){ currentobj.setTint(0xb2babb);  });
+
+        red2.on('pointerdown', function (pointer, red2) { currentobj.setTint(0xc0392b); });
+        orange2.on('pointerdown', function (pointer, orange2) { currentobj.setTint(0xf39c12); });
+        yellow2.on('pointerdown', function (pointer, yellow2){ currentobj.setTint(0xf4d03f);  });
+        green2.on('pointerdown', function(pointer, green2){ currentobj.setTint(0x52be80);  });
+        lightblue2.on('pointerdown', function(pointer, lightblue2){ currentobj.setTint(0x2980b9);  });
+        brown2.on('pointerdown', function(pointer, brown2){ currentobj.setTint(0xca6f1e);  });
+        purple2.on('pointerdown', function(pointer, purple2){ currentobj.setTint(0x6F5F78);  });
+        pink2.on('pointerdown', function(pointer, pink2){ currentobj.setTint(0xD6A16B);  });
+        white2.on('pointerdown', function(pointer, white2){ currentobj.setTint(0xd0d3d4);  });
+        black2.on('pointerdown', function(pointer, black2){ currentobj.setTint(0x707b7c);  });
+
+        red3.on('pointerdown', function (pointer, red3) { currentobj.setTint(0x85251B); });
+        orange3.on('pointerdown', function (pointer, orange3) { currentobj.setTint(0x874E0F); });
+        yellow3.on('pointerdown', function (pointer, yellow3){ currentobj.setTint(0xB2B037);  });
+        green3.on('pointerdown', function(pointer, green3){ currentobj.setTint(0x4C7940);  });
+        lightblue3.on('pointerdown', function(pointer, lightblue3){ currentobj.setTint(0x154360);  });
+        brown3.on('pointerdown', function(pointer, brown3){ currentobj.setTint(0xaf601a);  });
+        purple3.on('pointerdown', function(pointer, purple3){ currentobj.setTint(0x512e5f);  });
+        pink3.on('pointerdown', function(pointer, pink3){ currentobj.setTint(0xf8c471);  });
+        white3.on('pointerdown', function(pointer, white3){ currentobj.setTint(0x7f8c8d);  });
+        black3.on('pointerdown', function(pointer, black3){ currentobj.setTint(0x17202a);  });
+
+
+
+        //click item icons
+
+        //click eyes
+        normaleyeicon.on('pointerdown', function (pointer, normaleyeicon){ facekey = 'faceblink'; playereyes.anims.stop(); playerface.anims.stop(); });
+        gotheyeicon.on('pointerdown', function (pointer, gotheyeicon){ facekey = 'gothblink'; playereyes.anims.stop(); playerface.anims.stop(); });
+        shifteyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'shiftyblink'; playereyes.anims.stop(); playerface.anims.stop(); });
+
+        sadeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacesad'; playereyes.anims.stop(); playerface.anims.stop(); });
+        wideeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacewide'; playereyes.anims.stop(); playerface.anims.stop(); });;
+        animeeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfaceanime'; playereyes.anims.stop(); playerface.anims.stop(); });
+        
+        lashesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacelashes'; playereyes.anims.stop(); playerface.anims.stop(); });
+        bigeyesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacebigeyes'; playereyes.anims.stop(); playerface.anims.stop(); });
+        eyelinericon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfaceeyeliner'; playereyes.anims.stop(); playerface.anims.stop(); });
+      
+        nightmareeyesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacenightmare'; playereyes.anims.stop(); playerface.anims.stop(); });
+
+
+
+        //click tops
+        top1icon.on('pointerdown', function(pointer, top1icon){topKey = 'top1'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop(); });
+        top2icon.on('pointerdown', function(pointer, top2icon){topKey = 'top2'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        top3icon.on('pointerdown', function(pointer, top3icon){topKey = 'top3'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        top4icon.on('pointerdown', function(pointer, top4icon){topKey = 'top4'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top5icon.on('pointerdown', function(pointer, top5icon){topKey = 'top5'; underTopKey = 'top6under'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top6icon.on('pointerdown', function(pointer, top6icon){topKey = 'top5under'; underTopKey = 'top6'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top7icon.on('pointerdown', function(pointer, top7icon){topKey = 'top7'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top8icon.on('pointerdown', function(pointer, top8icon){topKey = 'top8'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top9icon.on('pointerdown', function(pointer, top9icon){topKey = 'top9'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top10icon.on('pointerdown', function(pointer, top10icon){topKey = 'top10'; underTopKey = 'top10under'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top11icon.on('pointerdown', function(pointer, top11icon){topKey = 'top11'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        top12icon.on('pointerdown', function(pointer, top12icon){topKey = 'top12'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        topPineappleIcon.on('pointerdown', function(pointer, topPineappleIcon) {topKey = 'topPineapple'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top13icon.on('pointerdown', function(pointer, top13icon){topKey = 'top13'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top14icon.on('pointerdown', function(pointer, top14icon){topKey = 'top14'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top15icon.on('pointerdown', function(pointer, top15icon){topKey = 'top15'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top16icon.on('pointerdown', function(pointer, top16icon){topKey = 'top16'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top17icon.on('pointerdown', function(pointer, top17icon){topKey = 'top17'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        top18icon.on('pointerdown', function(pointer, top18icon){topKey = 'top18'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+/*       top19icon.on('pointerdown', function(pointer, top4icon){topKey = 'top12'; underTopKey = 'blank'; playertop.anims.stop(); });
+        top20icon.on('pointerdown', function(pointer, top4icon){topKey = 'top9'; underTopKey = 'blank'; playertop.anims.stop(); });
+        top21icon.on('pointerdown', function(pointer, top4icon){topKey = 'top10'; underTopKey = 'blank'; playertop.anims.stop(); });
+        top22icon.on('pointerdown', function(pointer, top4icon){topKey = 'top11'; underTopKey = 'blank'; playertop.anims.stop(); });
+        top23icon.on('pointerdown', function(pointer, top4icon){topKey = 'top12'; underTopKey = 'blank'; playertop.anims.stop(); });
+ */      
+        //click bottoms
+        bottom1icon.on('pointerdown', function(pointer, bottom1icon){bottomKey = 'bottom1'; playerbottom.anims.stop(); });
+        bottom2icon.on('pointerdown', function(pointer, bottom2icon){bottomKey = 'bottom2'; playerbottom.anims.stop(); });
+        bottom3icon.on('pointerdown', function(pointer, bottom3icon){bottomKey = 'bottom3'; playerbottom.anims.stop(); });
+        bottom4icon.on('pointerdown', function(pointer, bottom4icon){bottomKey = 'bottom4'; playerbottom.anims.stop(); });
+        bottom5icon.on('pointerdown', function(pointer, bottom5icon){bottomKey = 'bottom5'; playerbottom.anims.stop(); });
+        bottom6icon.on('pointerdown', function(pointer, bottom6icon){bottomKey = 'bottom6'; playerbottom.anims.stop(); });
+        bottom7icon.on('pointerdown', function(pointer, bottom7icon){bottomKey = 'bottom7'; playerbottom.anims.stop(); });
+        bottom8icon.on('pointerdown', function(pointer, bottom8icon){bottomKey = 'bottom8'; playerbottom.anims.stop(); });
+        bottom9icon.on('pointerdown', function(pointer, bottom9icon){bottomKey = 'bottom9'; playerbottom.anims.stop(); });
+        /*
+        bottom10icon.on('pointerdown', function(pointer, bottom10icon){bottomKey = 'bottom10'; playerbottom.anims.stop(); });
+        bottom11icon.on('pointerdown', function(pointer, bottom11icon){bottomKey = 'bottom11'; playerbottom.anims.stop(); });
+        bottom12icon.on('pointerdown', function(pointer, bottom12icon){bottomKey = 'bottom12'; playerbottom.anims.stop(); });
+        bottom13icon.on('pointerdown', function(pointer, bottom13icon){bottomKey = 'bottom13'; playerbottom.anims.stop(); });
+        bottom14icon.on('pointerdown', function(pointer, bottom14icon){bottomKey = 'bottom14'; playerbottom.anims.stop(); });
+*/
+
+        //click accessories
+
+
+        //click backgrounds
+
+
+
+        //click arrows
+        leftArrow.on('pointerdown', function(pointer, leftArrow){ page -= 1; });
+        rightArrow.on('pointerdown', function(pointer, rightArrow){ page += 1; });
+
+        //ANIMATIONS
+        
+
+        //cat and eyes
+        var keys = ['cat', 'pupil', 'faceblink', 'gothblink', 'shiftyblink',  'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
+        var spritesheets = ['catbody','cateyes', 'catface', 'catfacegoth', 'catfaceshifty', 'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
+
+        for(var i = 0; i < keys.length; i++){
+            this.anims.create({
+                key: keys[i],
+                frames: this.anims.generateFrameNumbers(spritesheets[i], { start: 0, end: 13 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }
+
+        var tops = ['blank', 'top1', 'top2', 'top3', 'top4', 'top5', 'top5under', 'top6', 'top6under', 'top7', 'top8', 'top9', 'top10', 'top10under', 'top11', 'top12', 
+                    'topPineapple', 'top13', 'top14', 'top15', 'top16', 'top17', 'top18'];
+        for(var i = 0; i < tops.length; i++){
+            this.anims.create({
+                key: tops[i],
+                frames: this.anims.generateFrameNumbers(tops[i], { start: 0, end: 0 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }
+
+        var bottoms = ['bottom1', 'bottom2', 'bottom3', 'bottom4', 'bottom5', 'bottom6', 'bottom7', 'bottom8', 'bottom9'];
+        for(var i = 0; i < tops.length; i++){
+            this.anims.create({
+                key: bottoms[i],
+                frames: this.anims.generateFrameNumbers(bottoms[i], { start: 0, end: 0 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }
+    
+
+    }
+    //end create
+
+
+    //custom functions
+    function setActivity(icon, bool){
+        icon.input.enabled = bool;
+        icon.setVisible(bool);
+    }
+
+    function setAllActivity(array, bool){    
+        for(var i = 0; i < array.length; i++){
+            setActivity(array[i], bool);
+        }
+    }
+
+    function setJustOne(all, desired, page){
+        //i = icon category index
+        for(var i = 0; i < all.length; i++){
+            //j = array for each page of icons
+            for(var j = 0; j < all[i].length; j++){
+                if(all[i] != desired || j != page){
+                    setAllActivity(all[i][j], false);
+                }
+                if(all[i] == desired && j == page){
+                    setAllActivity(all[i][j], true);
+                }
+            }
+        }
+    }
+
+    function selected(icon, array){
+        for(var i = 0; i < array.length; i++){
+            if(array[i] != icon){
+                array[i].clearTint()
+            }
+            if(array[i] == icon){
+                array[i].setTint(0xff0000);
+            }
+        }
+    }
+
+    function playBody(bodyKey){
+        player.anims.play(bodyKey, true);
+    }
+
+    function playFace(facekey){
+        playerface.anims.play(facekey, true);
+        playereyes.anims.play('pupil', true);
+    }
+    function setTop(topKey, underTopKey){
+        playertop.anims.play(topKey, true);
+        playerUnderTop.anims.play(underTopKey, true);
+    }
+
+    function setBottoms(bottomKey){
+        playerbottom.anims.play(bottomKey, true);
+    }
+
+    function setAccessories(accessoryKeys){
+ /*     playeraccessory1.anims.play(acessoryKeys[0]);
+        playeraccessory2.anims.play(accessoryKey[1]);
+        playeraccessory3.anims.play(accessoryKey[2]);
+ */
+    }
+    function setBg(bgKey){
+//        playerbg.anims.play(bgKey);
+    }
+
+    function pageCtrl(page, max){
+        if(page >= max){
+            this.page = max;
+        }
+        if (page <= 0){
+            this.page = 0;
+        }
+    }
+
+
+    function menuOptions(selection){
+        //icon arrays
+        var bodyIcons = [ [], [], [] ];
+        var eyeIcons = [
+            [normaleyeicon, gotheyeicon, shifteyeicon, sadeyeicon, eyelinericon, wideeyeicon, animeeyeicon, lashesicon, bigeyesicon, nightmareeyesicon],
+            [],
+            []
+        ];
+        var topIcons = [ 
+            [top1icon, top2icon, top3icon, top4icon, top5icon, top6icon, top7icon, top8icon, top9icon, top10icon, top11icon, top12icon],
+            [topPineappleIcon, top13icon, top14icon, top15icon, top16icon, top17icon, top18icon],
+            [] 
+        ];
+        var bottomIcons = [ 
+            [bottom1icon, bottom2icon, bottom3icon, bottom4icon, bottom5icon, bottom6icon, bottom7icon, bottom8icon, bottom9icon],
+            [],
+            []
+         ];
+        var accessoriesIcons= [ [], [], []];
+
+        var bgIcons= [ [], [], [] ];
+
+        var allIcons = [bodyIcons, eyeIcons, topIcons, bottomIcons, accessoriesIcons, bgIcons]; 
+
+        var textIcons = [bodytxt, eyestxt, toptxt, bottomtxt, accessoriestxt, bgtext];
+
+        //body selection
+        if(selection == 1){  
+            currentobj = player;
+            selected(bodytxt, textIcons);
+            pageCtrl(page, bodyIcons.length);
+            console.log('selection 1 page:' + page);
+            setJustOne(allIcons, bodyIcons, page);
+        }
+        //eyes selection
+        if(selection == 2){
+            currentobj = playereyes;
+            selected(eyestxt, textIcons);
+            pageCtrl(page, eyeIcons.length);
+            console.log('selection 2 page:' + page);
+            setJustOne(allIcons, eyeIcons, page);
+        }
+        //top section
+        if(selection == 3){
+            currentobj = playertop;
+            selected(toptxt, textIcons);
+            pageCtrl(page, topIcons.length);
+            console.log('selection 3 page:' + page);
+            setJustOne(allIcons, topIcons, page);
+        }
+        //bottom section
+        if(selection == 4){
+            currentobj = playerbottom;
+            selected(bottomtxt, textIcons);
+            pageCtrl(page, bottomIcons.length);
+            console.log('selection 4 page:' + page);
+            setJustOne(allIcons, bottomIcons, page);
+        }
+        //accessories section
+        if(selection == 5){
+           // currentobj = playeraccessory;
+            selected(accessoriestxt, textIcons);
+            pageCtrl(page, accessoriesIcons.length);
+            console.log('selection 5 page:' + page);
+            setJustOne(allIcons, accessoriesIcons, page);
+        }
+        //bg section
+        if(selection == 6){
+            //currentobj = bg;
+            selected(bgtext, textIcons);
+            pageCtrl(page, bgIcons.length);
+            console.log('selection 6 page:' + page);
+            setJustOne(allIcons, bgIcons, page);
+        }
+    }
+
+    var currentobj = 'cat';
+    var selection = 1;
+    var currentobj;
+    var page = 0;
+
+    facekey = 'faceblink';
+    bodyKey = 'cat'
+    topKey = 'top1';
+    underTopKey = 'blank';
+    bottomKey = 'bottom1';
+    bgKey = 'bg';
+    accessoryKeys = [];
+
+    //Game Main
+    function update ()
+    { 
+
+        menuOptions(selection);               //select section
+        
+        playBody(bodyKey);                    //body
+        playFace(facekey);                    //face/ eyes
+        setTop(topKey, underTopKey);
+        setBottoms(bottomKey);               
+
+
+
+    }
+
+</script>
+
+</body>
+</html>
