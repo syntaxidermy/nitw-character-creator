@@ -200,7 +200,7 @@
 
 
         //bgs
-		this.load.image('bg', 'assets/bg.png');
+	this.load.image('bg', 'assets/bg.png');
 		
         //bodies
         this.load.spritesheet('catbody', 'assets/catbody.png', { frameWidth: 297, frameHeight: 397 });
@@ -420,8 +420,9 @@
         this.load.image('1txt', 'assets/text1.png');
         this.load.image('2txt', 'assets/text2.png');
         this.load.image('3txt', 'assets/text3.png');
+	    
         //music
-      //  this.load.audio('music', 'assets/possumsprings.mp3');
+        this.load.audio('music', 'assets/possumsprings.mp3');
     }
 
     function create ()
@@ -435,8 +436,8 @@
 
 		bg = this.add.image(500,300,'bg');
 
-//        var music = this.sound.add('music');
-//        music.play();
+        var music = this.sound.add('music');
+	music.play();
 
         //Title/credits
         this.add.image(500,80, 'titletxt');
