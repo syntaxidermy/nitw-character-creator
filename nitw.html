@@ -204,9 +204,11 @@
 		
         //bodies
         this.load.spritesheet('catbody', 'assets/catbody.png', { frameWidth: 297, frameHeight: 397 });
-        
+        this.load.spritesheet('gatorbody', 'assets/gator/bodygator.png', { frameWidth: 297, frameHeight: 397 });
+
         //eye sprites
-        this.load.spritesheet('cateyes', 'assets/catpupils.png', { frameWidth: 297, frameHeight: 397});
+        //cat
+        this.load.spritesheet('catpupil', 'assets/catpupils.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('catface', 'assets/catface.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('catfacegoth', 'assets/catfacegoth.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('catfaceshifty', 'assets/catfaceshifty.png', { frameWidth: 297, frameHeight: 397});
@@ -218,17 +220,19 @@
         this.load.spritesheet('catfacenightmare', 'assets/catfacenightmare.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('catfaceeyeliner', 'assets/catfaceeyeliner.png', { frameWidth: 297, frameHeight: 397});
         
-
+        //gator
+        this.load.spritesheet('gatorpupil', 'assets/gator/eyepupil.png',{ frameWidth: 297, frameHeight: 397 });
+        this.load.spritesheet('gatorface1', 'assets/gator/eyes1.png', { frameWidth: 297, frameHeight: 397 });
 
 
         //tops
         this.load.spritesheet('blank', 'assets/topsblankunder.png', { frameWidth: 297, frameHeight: 397});
+        
+        //cat
         this.load.spritesheet('top5under', 'assets/top5under.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('top6under', 'assets/top6under.png', { frameWidth: 297, frameHeight: 397});
         this.load.spritesheet('top10under', 'assets/top10under.png', { frameWidth: 297, frameHeight: 397});
         
-
-
         this.load.spritesheet('top1', 'assets/top1.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('top2', 'assets/top2.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('top3', 'assets/top3.png', { frameWidth: 297, frameHeight: 397} );
@@ -252,12 +256,34 @@
         this.load.spritesheet('top20', 'assets/top19.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('top21', 'assets/top20.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('top22', 'assets/top21.png', { frameWidth: 297, frameHeight: 397} );
-
-
-
-
-
 */
+        //gator
+        this.load.spritesheet('gtop2under', 'assets/gator/top2under.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop3under', 'assets/gator/top3over.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop4under', 'assets/gator/top4under.png', { frameWidth: 297, frameHeight: 397} );
+
+        this.load.spritesheet('gtop1', 'assets/gator/top1.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop2', 'assets/gator/top2.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop3', 'assets/gator/top3.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop4', 'assets/gator/top4s.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop5', 'assets/gator/top5.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop6', 'assets/gator/top6.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop7', 'assets/gator/top7.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop8', 'assets/gator/top8.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop9', 'assets/gator/top9.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop10', 'assets/gator/top10.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop11', 'assets/gator/top11.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop12', 'assets/gator/top12.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtoppineapple', 'assets/gator/toppineapple.png', {frameWidth: 297, frameHeight: 397 });
+        this.load.spritesheet('gtop13', 'assets/gator/top13.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop14', 'assets/gator/top14.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop15', 'assets/gator/top15.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop16', 'assets/gator/top16.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop17', 'assets/gator/top17.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop18', 'assets/gator/top18.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gtop19', 'assets/gator/top19.png', { frameWidth: 297, frameHeight: 397})
+
+
         //bottoms
         this.load.spritesheet('bottom1', 'assets/bottom1.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('bottom2', 'assets/bottoms2.png', { frameWidth: 297, frameHeight: 397} );
@@ -272,7 +298,16 @@
         this.load.spritesheet('bottoms1', 'assets/bottoms1.png', { frameWidth: 297, frameHeight: 397} );
         this.load.spritesheet('bottoms1', 'assets/bottoms1.png', { frameWidth: 297, frameHeight: 397} );
 */
-
+        //gator
+        this.load.spritesheet('gbottom1', 'assets/gator/bottoms1.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom2', 'assets/gator/bottoms2.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom3', 'assets/gator/bottoms3.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom4', 'assets/gator/bottoms4.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom5', 'assets/gator/bottoms5.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom6', 'assets/gator/bottoms6.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom7', 'assets/gator/bottoms7.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom8', 'assets/gator/bottoms8.png', { frameWidth: 297, frameHeight: 397} );
+        this.load.spritesheet('gbottom9', 'assets/gator/bottoms9.png', { frameWidth: 297, frameHeight: 397} );
 
         //accessories
         this.load.spritesheet('nillicon', 'assets/nillicon.png', { frameWidth: 297, frameHeight: 497});
@@ -317,6 +352,48 @@
         this.load.spritesheet('a35', 'assets/a35.png', { frameWidth: 297, frameHeight: 497} );
         this.load.spritesheet('a36', 'assets/a36.png', { frameWidth: 297, frameHeight: 497} ); //glasses
         
+        //gator accessories
+        this.load.spritesheet('gnillicon', 'assets/nillicon.png', { frameWidth: 297, frameHeight: 497});
+        this.load.spritesheet('ga0',  'assets/a0.png', { frameWidth: 297, frameHeight: 497});
+
+        this.load.spritesheet('ga1', 'assets/gator/a1.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga2', 'assets/gator/a2.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('ga3', 'assets/gator/a3.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga4', 'assets/gator/a4.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga5', 'assets/gator/a5.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga6', 'assets/gator/a6.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga7', 'assets/gator/a7.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('ga8', 'assets/gator/a8.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga9', 'assets/gator/a9.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga10', 'assets/gator/a10.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga11', 'assets/gator/a11.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga12', 'assets/gator/a12.png', { frameWidth: 297, frameHeight: 497} );
+        
+        this.load.spritesheet('ga13', 'assets/gator/a13.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga14', 'assets/gator/a14.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga15', 'assets/gator/a15.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga16', 'assets/gator/a16.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga17', 'assets/gator/a17.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga18', 'assets/gator/a18.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga19', 'assets/gator/a19.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga20', 'assets/gator/a20.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('ga21', 'assets/gator/a21.png', { frameWidth: 297, frameHeight: 497} ); //glasses
+        this.load.spritesheet('ga22', 'assets/gator/a22.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga23', 'assets/gator/a23.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga24', 'assets/gator/a24.png', { frameWidth: 297, frameHeight: 497} ); 
+        
+        this.load.spritesheet('ga25', 'assets/gator/a25.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga26', 'assets/gator/a26.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga27', 'assets/gator/a27.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga28', 'assets/gator/a28.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga29', 'assets/gator/a29.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga30', 'assets/gator/a30.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga31', 'assets/gator/a31.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga32', 'assets/gator/a32.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga33', 'assets/gator/a33.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga34', 'assets/gator/a34.png', { frameWidth: 297, frameHeight: 497} );
+        this.load.spritesheet('ga35', 'assets/gator/a35.png', { frameWidth: 297, frameHeight: 497} );
+
 
 
 
@@ -344,7 +421,7 @@
         this.load.image('2txt', 'assets/text2.png');
         this.load.image('3txt', 'assets/text3.png');
         //music
-        this.load.audio('music', 'assets/possumsprings.mp3');
+      //  this.load.audio('music', 'assets/possumsprings.mp3');
     }
 
     function create ()
@@ -358,8 +435,8 @@
 
 		bg = this.add.image(500,300,'bg');
 
-        var music = this.sound.add('music');
-        music.play();
+//        var music = this.sound.add('music');
+//        music.play();
 
         //Title/credits
         this.add.image(500,80, 'titletxt');
@@ -477,7 +554,11 @@
 
         //MENU ICONS
 
-        //eyes page 1
+        //bodies
+        caticon = this.add.image(720,170, 'catbody').setScale(.15).setInteractive();
+        gatoricon = this.add.image(804,170, 'gatorbody').setScale(.15).setInteractive();
+
+        //eyes page 1 - cat
         normaleyeicon = this.add.image(735,185,'catface').setScale(0.25).setInteractive();
         gotheyeicon = this.add.image(812,185, 'catfacegoth').setScale(0.25).setInteractive();
         shifteyeicon = this.add.image(893,185, 'catfaceshifty').setScale(0.25).setInteractive();
@@ -491,6 +572,11 @@
         eyelinericon = this.add.image(893, 340, 'catfaceeyeliner').setScale(0.25).setInteractive();
 
         nightmareeyesicon = this.add.image(735, 410, 'catfacenightmare').setScale(0.20).setInteractive();
+
+
+        //gator eyes - page 1
+        geye1icon = this.add.image(735,185,'gatorface1').setScale(0.25).setInteractive();
+
 
 
 
@@ -527,24 +613,63 @@
 //        top12icon = this.add.image(880, 400, 'top12').setScale(0.25).setInteractive();
     
 
-
-
-
-
-        //bottoms
-        bottom1icon = this.add.image(720, 140, 'bottom1').setScale(0.25).setInteractive();
-        bottom2icon = this.add.image(800,130, 'bottom2').setScale(0.25).setInteractive();
-        bottom3icon = this.add.image(880,130, 'bottom3').setScale(0.25).setInteractive();
+        //gator tops page 1
+        gtop1icon = this.add.image(720,160, 'gtop1').setScale(0.25).setInteractive();
+        gtop2icon = this.add.image(800,160, 'gtop2').setScale(0.25).setInteractive();
+        gtop3icon = this.add.image(880,160, 'gtop3').setScale(0.25).setInteractive();
        
-        bottom4icon = this.add.image(720, 210, 'bottom4').setScale(0.25).setInteractive();
-        bottom5icon = this.add.image(800, 210, 'bottom5').setScale(0.25).setInteractive();
-        bottom6icon = this.add.image(880, 200, 'bottom6').setScale(0.25).setInteractive();
+        gtop4icon = this.add.image(720, 240, 'gtop4').setScale(0.25).setInteractive();
+        gtop5icon = this.add.image(800, 240, 'gtop5').setScale(0.25).setInteractive();
+        gtop6icon = this.add.image(880, 230, 'gtop6').setScale(0.25).setInteractive();
        
-        bottom7icon = this.add.image(720, 300, 'bottom7').setScale(0.25).setInteractive();
-        bottom8icon = this.add.image(800, 300, 'bottom8').setScale(0.25).setInteractive();
-        bottom9icon = this.add.image(880, 300, 'bottom9').setScale(0.25).setInteractive();
+        gtop7icon = this.add.image(720, 320, 'gtop7').setScale(0.25).setInteractive();
+        gtop8icon = this.add.image(800, 320, 'gtop8').setScale(0.25).setInteractive();
+        gtop9icon = this.add.image(880, 320, 'gtop9').setScale(0.25).setInteractive();
+       
+        gtop10icon = this.add.image(720, 400, 'gtop10').setScale(0.25).setInteractive();
+        gtop11icon = this.add.image(800, 400, 'gtop11').setScale(0.25).setInteractive();
+        gtop12icon = this.add.image(880, 400, 'gtop12').setScale(0.25).setInteractive();
     
+        //gator tops page 2
+        gtopPineappleIcon = this.add.image(720, 160, 'gtoppineapple').setScale(0.25).setInteractive();
+        gtop13icon = this.add.image(800, 160, 'gtop13').setScale(0.25).setInteractive();
+        gtop14icon = this.add.image(880, 160, 'gtop14').setScale(0.25).setInteractive();
 
+        gtop15icon = this.add.image(720, 250, 'gtop15').setScale(0.25).setInteractive();
+        gtop16icon = this.add.image(800, 250, 'gtop16').setScale(0.25).setInteractive();
+        gtop17icon = this.add.image(880, 250, 'gtop17').setScale(0.25).setInteractive();
+
+        gtop18icon = this.add.image(720, 320, 'gtop18').setScale(0.25).setInteractive();
+        gtop19icon = this.add.image(800, 320, 'gtop19').setScale(0.25).setInteractive();
+
+
+
+        //bottoms - cat
+        bottom1icon = this.add.image(720, 145, 'bottom1').setScale(0.25).setInteractive();
+        bottom2icon = this.add.image(800,135, 'bottom2').setScale(0.25).setInteractive();
+        bottom3icon = this.add.image(880,135, 'bottom3').setScale(0.25).setInteractive();
+       
+        bottom4icon = this.add.image(720, 215, 'bottom4').setScale(0.25).setInteractive();
+        bottom5icon = this.add.image(800, 215, 'bottom5').setScale(0.25).setInteractive();
+        bottom6icon = this.add.image(880, 220, 'bottom6').setScale(0.25).setInteractive();
+       
+        bottom7icon = this.add.image(720, 305, 'bottom7').setScale(0.25).setInteractive();
+        bottom8icon = this.add.image(800, 305, 'bottom8').setScale(0.25).setInteractive();
+        bottom9icon = this.add.image(880, 305, 'bottom9').setScale(0.25).setInteractive();
+    
+        //bottoms - gator
+        gbottom1icon = this.add.image(720, 145, 'gbottom1').setScale(0.25).setInteractive();
+        gbottom2icon = this.add.image(800,135, 'gbottom2').setScale(0.25).setInteractive();
+        gbottom3icon = this.add.image(880,135, 'gbottom3').setScale(0.25).setInteractive();
+       
+        gbottom4icon = this.add.image(720, 215, 'gbottom4').setScale(0.25).setInteractive();
+        gbottom5icon = this.add.image(800, 215, 'gbottom5').setScale(0.25).setInteractive();
+        gbottom6icon = this.add.image(880, 205, 'gbottom6').setScale(0.25).setInteractive();
+       
+        gbottom7icon = this.add.image(720, 305, 'gbottom7').setScale(0.25).setInteractive();
+        gbottom8icon = this.add.image(800, 305, 'gbottom8').setScale(0.25).setInteractive();
+        gbottom9icon = this.add.image(880, 305, 'gbottom9').setScale(0.25).setInteractive();
+    
 
         //accessories    
         //page1
@@ -591,6 +716,54 @@
         
         //page4
         a0icon = this.add.image(720,160, 'nillicon').setScale(.1).setInteractive();
+
+        //gator accessories - page 1
+        ga1icon = this.add.image(720, 180, 'ga1').setScale(.15).setInteractive();
+        ga2icon = this.add.image(800, 180, 'ga2').setScale(.15).setInteractive();
+        ga3icon = this.add.image(880, 180, 'ga3').setScale(.15).setInteractive();
+        ga4icon = this.add.image(720, 250, 'ga4').setScale(.15).setInteractive();
+        ga5icon = this.add.image(800, 250, 'ga5').setScale(.15).setInteractive();
+        ga6icon = this.add.image(880, 250, 'ga6').setScale(.15).setInteractive();
+        ga7icon = this.add.image(720, 320, 'ga7').setScale(.15).setInteractive();
+        ga8icon = this.add.image(800, 320, 'ga8').setScale(.15).setInteractive();
+        ga9icon = this.add.image(880, 350, 'ga9').setScale(.15).setInteractive();
+        ga10icon = this.add.image(720, 400, 'ga10').setScale(.15).setInteractive();
+        ga11icon = this.add.image(800, 400, 'ga11').setScale(.15).setInteractive();
+        ga12icon = this.add.image(880, 400, 'ga12').setScale(.15).setInteractive();
+        
+        //page2
+        ga13icon = this.add.image(720, 160, 'ga13').setScale(.15).setInteractive();
+        ga14icon = this.add.image(800, 170, 'ga14').setScale(.15).setInteractive();
+        ga15icon = this.add.image(880, 160, 'ga15').setScale(.15).setInteractive();
+        ga16icon = this.add.image(720, 260, 'ga16').setScale(.15).setInteractive();
+        ga17icon = this.add.image(800, 250, 'ga17').setScale(.15).setInteractive();
+        ga18icon = this.add.image(880, 260, 'ga18').setScale(.15).setInteractive();
+        ga19icon = this.add.image(720, 330, 'ga19').setScale(.15).setInteractive();
+        ga20icon = this.add.image(800, 320, 'ga20').setScale(.15).setInteractive();
+        ga21icon = this.add.image(880, 350, 'ga21').setScale(.15).setInteractive();
+        ga22icon = this.add.image(720, 430, 'ga22').setScale(.15).setInteractive();
+        ga23icon = this.add.image(800, 430, 'ga23').setScale(.15).setInteractive();
+        ga24icon = this.add.image(880, 410, 'ga24').setScale(.15).setInteractive();
+        
+        //page3
+        ga25icon = this.add.image(720, 160, 'ga25').setScale(.15).setInteractive();
+        ga26icon = this.add.image(800, 160, 'ga26').setScale(.15).setInteractive();
+        ga27icon = this.add.image(880, 180, 'ga27').setScale(.15).setInteractive();
+        ga28icon = this.add.image(720, 260, 'ga28').setScale(.15).setInteractive();
+        ga29icon = this.add.image(800, 260, 'ga29').setScale(.15).setInteractive();
+        ga30icon = this.add.image(880, 250, 'ga30').setScale(.15).setInteractive();
+        ga31icon = this.add.image(720, 330, 'ga31').setScale(.15).setInteractive();
+        ga32icon = this.add.image(800, 330, 'ga32').setScale(.15).setInteractive();
+        ga33icon = this.add.image(880, 340, 'ga33').setScale(.15).setInteractive();
+        ga34icon = this.add.image(720, 430, 'ga34').setScale(.15).setInteractive();
+        ga35icon = this.add.image(800, 430, 'ga35').setScale(.15).setInteractive();
+        
+        //page4
+        ga0icon = this.add.image(720,160, 'nillicon').setScale(.1).setInteractive();
+
+        
+
+
 
         //bgs
 
@@ -659,20 +832,61 @@
 
         //click item icons
 
+        //click body icons
+        caticon.on('pointerdown', function (pointer, caticon){ 
+            bodyKey = 'catbody';
+            pupilKey = 'catpupil'
+            facekey = 'faceblink';
+            topKey = 'top1';
+            underTopKey = 'blank';
+            bottomKey = 'bottom1';
+            accessoryKey = ['a0','a0','a0'];
+
+            playereyes.anims.stop(); 
+            playerface.anims.stop(); 
+            player.anims.stop(); 
+            playertop.anims.stop(); 
+            playerUnderTop.anims.stop(); 
+            playeraccessory.anims.stop(); 
+            playeraccessory2.anims.stop(); 
+            playeraccessory3.anims.stop(); 
+            playerbottom.anims.stop();
+            });
+        gatoricon.on('pointerdown', function (pointer, gatoricon){ 
+            bodyKey = 'gatorbody'; 
+            pupilKey = 'gatorpupil'
+            facekey = 'gatorface1';
+            topKey = 'gtop8';
+            underTopKey = 'blank';
+            bottomKey = 'gbottom1';
+            accessoryKey = ['ga0','ga0','ga0'];
+
+            playereyes.anims.stop(); 
+            playerface.anims.stop(); 
+            player.anims.stop(); 
+            playertop.anims.stop(); 
+            playerUnderTop.anims.stop(); 
+            playeraccessory.anims.stop(); 
+            playeraccessory2.anims.stop(); 
+            playeraccessory3.anims.stop(); 
+            playerbottom.anims.stop();
+        });
+
+
         //click eyes
         normaleyeicon.on('pointerdown', function (pointer, normaleyeicon){ facekey = 'faceblink'; playereyes.anims.stop(); playerface.anims.stop(); });
         gotheyeicon.on('pointerdown', function (pointer, gotheyeicon){ facekey = 'gothblink'; playereyes.anims.stop(); playerface.anims.stop(); });
         shifteyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'shiftyblink'; playereyes.anims.stop(); playerface.anims.stop(); });
-
         sadeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacesad'; playereyes.anims.stop(); playerface.anims.stop(); });
         wideeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacewide'; playereyes.anims.stop(); playerface.anims.stop(); });;
         animeeyeicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfaceanime'; playereyes.anims.stop(); playerface.anims.stop(); });
-        
         lashesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacelashes'; playereyes.anims.stop(); playerface.anims.stop(); });
         bigeyesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacebigeyes'; playereyes.anims.stop(); playerface.anims.stop(); });
         eyelinericon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfaceeyeliner'; playereyes.anims.stop(); playerface.anims.stop(); });
-      
         nightmareeyesicon.on('pointerdown', function (pointer, shifteyeicon){ facekey = 'catfacenightmare'; playereyes.anims.stop(); playerface.anims.stop(); });
+
+        //click gator eyes
+        geye1icon.on('pointerdown', function (pointer, geye1){ facekey = 'gatorface1'; playereyes.anims.stop(); playerface.anims.stop(); });
 
 
 
@@ -702,6 +916,31 @@
         top22icon.on('pointerdown', function(pointer, top4icon){topKey = 'top11'; underTopKey = 'blank'; playertop.anims.stop(); });
         top23icon.on('pointerdown', function(pointer, top4icon){topKey = 'top12'; underTopKey = 'blank'; playertop.anims.stop(); });
  */      
+        //gator click tops
+        gtop1icon.on('pointerdown', function(pointer, gtop1icon){topKey = 'gtop1'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop(); });
+        gtop2icon.on('pointerdown', function(pointer, gtop2icon){topKey = 'gtop2'; underTopKey = 'gtop2under'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        gtop3icon.on('pointerdown', function(pointer, gtop3icon){topKey = 'gtop3under'; underTopKey = 'gtop3'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        gtop4icon.on('pointerdown', function(pointer, gtop4icon){topKey = 'gtop4'; underTopKey = 'gtop4under'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop5icon.on('pointerdown', function(pointer, gtop5icon){topKey = 'gtop5'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop6icon.on('pointerdown', function(pointer, gtop6icon){topKey = 'gtop6'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop7icon.on('pointerdown', function(pointer, gtop7icon){topKey = 'gtop7'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop8icon.on('pointerdown', function(pointer, gtop8icon){topKey = 'gtop8'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop9icon.on('pointerdown', function(pointer, gtop9icon){topKey = 'gtop9'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop10icon.on('pointerdown', function(pointer, gtop10icon){topKey = 'gtop10'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop11icon.on('pointerdown', function(pointer, gtop11icon){topKey = 'gtop11'; underTopKey = 'blank'; playertop.anims.stop(); playerUnderTop.anims.stop();  });
+        gtop12icon.on('pointerdown', function(pointer, gtop12icon){topKey = 'gtop12'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtopPineappleIcon.on('pointerdown', function(pointer, gtoppineappleIcon) {topKey = 'gtoppineapple'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop13icon.on('pointerdown', function(pointer, gtop13icon){topKey = 'gtop13'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop14icon.on('pointerdown', function(pointer, gtop14icon){topKey = 'gtop14'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop15icon.on('pointerdown', function(pointer, gtop15icon){topKey = 'gtop15'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop16icon.on('pointerdown', function(pointer, gtop16icon){topKey = 'gtop16'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop17icon.on('pointerdown', function(pointer, gtop17icon){topKey = 'gtop17'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop18icon.on('pointerdown', function(pointer, gtop18icon){topKey = 'gtop18'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+        gtop19icon.on('pointerdown', function(pointer, gtop19icon){topKey = 'gtop19'; underTopKey = 'blank'; playertop.anims.stop();  playerUnderTop.anims.stop(); });
+
+
+
+
         //click bottoms
         bottom1icon.on('pointerdown', function(pointer, bottom1icon){bottomKey = 'bottom1'; playerbottom.anims.stop(); });
         bottom2icon.on('pointerdown', function(pointer, bottom2icon){bottomKey = 'bottom2'; playerbottom.anims.stop(); });
@@ -719,6 +958,18 @@
         bottom13icon.on('pointerdown', function(pointer, bottom13icon){bottomKey = 'bottom13'; playerbottom.anims.stop(); });
         bottom14icon.on('pointerdown', function(pointer, bottom14icon){bottomKey = 'bottom14'; playerbottom.anims.stop(); });
 */
+
+        //gator click bottoms
+        gbottom1icon.on('pointerdown', function(pointer, gbottom1icon){bottomKey = 'gbottom1'; playerbottom.anims.stop(); });
+        gbottom2icon.on('pointerdown', function(pointer, gbottom2icon){bottomKey = 'gbottom2'; playerbottom.anims.stop(); });
+        gbottom3icon.on('pointerdown', function(pointer, gbottom3icon){bottomKey = 'gbottom3'; playerbottom.anims.stop(); });
+        gbottom4icon.on('pointerdown', function(pointer, gbottom4icon){bottomKey = 'gbottom4'; playerbottom.anims.stop(); });
+        gbottom5icon.on('pointerdown', function(pointer, gbottom5icon){bottomKey = 'gbottom5'; playerbottom.anims.stop(); });
+        gbottom6icon.on('pointerdown', function(pointer, gbottom6icon){bottomKey = 'gbottom6'; playerbottom.anims.stop(); });
+        gbottom7icon.on('pointerdown', function(pointer, gbottom7icon){bottomKey = 'gbottom7'; playerbottom.anims.stop(); });
+        gbottom8icon.on('pointerdown', function(pointer, gbottom8icon){bottomKey = 'gbottom8'; playerbottom.anims.stop(); });
+        gbottom9icon.on('pointerdown', function(pointer, gbottom9icon){bottomKey = 'gbottom9'; playerbottom.anims.stop(); });
+
 
         //click accessories
         a0icon.on('pointerdown', function(pointer, a0icon){accessoryKey[accessoryIndex] = 'a0'; playeraccessory.anims.stop();});
@@ -761,6 +1012,47 @@
         a35icon.on('pointerdown', function(pointer, a35icon){accessoryKey[accessoryIndex] = 'a35'; playeraccessory.anims.stop();});
         a36icon.on('pointerdown', function(pointer, a36icon){accessoryKey[accessoryIndex] = 'a36'; playeraccessory.anims.stop();});
 
+        //gator accessory clicks
+        
+        ga0icon.on('pointerdown', function(pointer, ga0icon){accessoryKey[accessoryIndex] = 'ga0'; playeraccessory.anims.stop();});
+        ga1icon.on('pointerdown', function(pointer, ga1icon){accessoryKey[accessoryIndex] = 'ga1'; playeraccessory.anims.stop();});
+        ga2icon.on('pointerdown', function(pointer, ga2icon){accessoryKey[accessoryIndex] = 'ga2'; playeraccessory.anims.stop(); });
+        ga3icon.on('pointerdown', function(pointer, ga3icon){accessoryKey[accessoryIndex] = 'ga3'; playeraccessory.anims.stop();});
+        ga4icon.on('pointerdown', function(pointer, ga4icon){accessoryKey[accessoryIndex] = 'ga4'; playeraccessory.anims.stop();});
+        ga5icon.on('pointerdown', function(pointer, ga5icon){accessoryKey[accessoryIndex] = 'ga5'; playeraccessory.anims.stop();});
+        ga6icon.on('pointerdown', function(pointer, ga6icon){accessoryKey[accessoryIndex] = 'ga6'; playeraccessory.anims.stop();});
+        ga7icon.on('pointerdown', function(pointer, ga7icon){accessoryKey[accessoryIndex] = 'ga7'; playeraccessory.anims.stop();});
+        ga8icon.on('pointerdown', function(pointer, ga8icon){accessoryKey[accessoryIndex] = 'ga8'; playeraccessory.anims.stop();});
+        ga9icon.on('pointerdown', function(pointer, ga9icon){accessoryKey[accessoryIndex] = 'ga9'; playeraccessory.anims.stop();});
+        ga10icon.on('pointerdown', function(pointer, ga10icon){accessoryKey[accessoryIndex] = 'ga10'; playeraccessory.anims.stop();});
+        ga11icon.on('pointerdown', function(pointer, ga11icon){accessoryKey[accessoryIndex] = 'ga11'; playeraccessory.anims.stop();});
+        ga12icon.on('pointerdown', function(pointer, ga12icon){accessoryKey[accessoryIndex] = 'ga12'; playeraccessory.anims.stop();});
+
+        ga13icon.on('pointerdown', function(pointer, ga13icon){accessoryKey[accessoryIndex] = 'ga13'; playeraccessory.anims.stop();});
+        ga14icon.on('pointerdown', function(pointer, ga14icon){accessoryKey[accessoryIndex] = 'ga14'; playeraccessory.anims.stop();});
+        ga15icon.on('pointerdown', function(pointer, ga15icon){accessoryKey[accessoryIndex] = 'ga15'; playeraccessory.anims.stop();});
+        ga16icon.on('pointerdown', function(pointer, ga16icon){accessoryKey[accessoryIndex] = 'ga16'; playeraccessory.anims.stop();});
+        ga17icon.on('pointerdown', function(pointer, ga17icon){accessoryKey[accessoryIndex] = 'ga17'; playeraccessory.anims.stop();});
+        ga18icon.on('pointerdown', function(pointer, ga18icon){accessoryKey[accessoryIndex] = 'ga18'; playeraccessory.anims.stop();});
+        ga19icon.on('pointerdown', function(pointer, ga19icon){accessoryKey[accessoryIndex] = 'ga19'; playeraccessory.anims.stop();});
+        ga20icon.on('pointerdown', function(pointer, ga20icon){accessoryKey[accessoryIndex] = 'ga20'; playeraccessory.anims.stop();});
+        ga21icon.on('pointerdown', function(pointer, ga21icon){accessoryKey[accessoryIndex] = 'ga21'; playeraccessory.anims.stop();});
+        ga22icon.on('pointerdown', function(pointer, ga22icon){accessoryKey[accessoryIndex] = 'ga22'; playeraccessory.anims.stop();});
+        ga23icon.on('pointerdown', function(pointer, ga23icon){accessoryKey[accessoryIndex] = 'ga23'; playeraccessory.anims.stop();});
+        ga24icon.on('pointerdown', function(pointer, ga24icon){accessoryKey[accessoryIndex] = 'ga24'; playeraccessory.anims.stop();});
+
+        ga25icon.on('pointerdown', function(pointer, ga25icon){accessoryKey[accessoryIndex] = 'ga25'; playeraccessory.anims.stop();});
+        ga26icon.on('pointerdown', function(pointer, ga26icon){accessoryKey[accessoryIndex] = 'ga26'; playeraccessory.anims.stop();});
+        ga27icon.on('pointerdown', function(pointer, ga27icon){accessoryKey[accessoryIndex] = 'ga27'; playeraccessory.anims.stop();});
+        ga28icon.on('pointerdown', function(pointer, ga28icon){accessoryKey[accessoryIndex] = 'ga28'; playeraccessory.anims.stop();});
+        ga29icon.on('pointerdown', function(pointer, ga29icon){accessoryKey[accessoryIndex] = 'ga29'; playeraccessory.anims.stop();});
+        ga30icon.on('pointerdown', function(pointer, ga30icon){accessoryKey[accessoryIndex] = 'ga30'; playeraccessory.anims.stop();});
+        ga31icon.on('pointerdown', function(pointer, ga31icon){accessoryKey[accessoryIndex] = 'ga31'; playeraccessory.anims.stop();});
+        ga32icon.on('pointerdown', function(pointer, ga32icon){accessoryKey[accessoryIndex] = 'ga32'; playeraccessory.anims.stop();});
+        ga33icon.on('pointerdown', function(pointer, ga33icon){accessoryKey[accessoryIndex] = 'ga33'; playeraccessory.anims.stop();});
+        ga34icon.on('pointerdown', function(pointer, ga34icon){accessoryKey[accessoryIndex] = 'ga34'; playeraccessory.anims.stop();});
+        ga35icon.on('pointerdown', function(pointer, ga35icon){accessoryKey[accessoryIndex] = 'ga35'; playeraccessory.anims.stop();});
+
 
         //click backgrounds
 
@@ -774,8 +1066,8 @@
         
 
         //cat and eyes
-        var keys = ['cat', 'pupil', 'faceblink', 'gothblink', 'shiftyblink',  'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
-        var spritesheets = ['catbody','cateyes', 'catface', 'catfacegoth', 'catfaceshifty', 'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
+        var keys = ['catbody', 'catpupil', 'faceblink', 'gothblink', 'shiftyblink',  'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
+        var spritesheets = ['catbody','catpupil', 'catface', 'catfacegoth', 'catfaceshifty', 'catfacesad', 'catfacewide', 'catfaceanime', 'catfacelashes', 'catfacebigeyes', 'catfaceeyeliner', 'catfacenightmare'];
 
         for(var i = 0; i < keys.length; i++){
             this.anims.create({
@@ -786,8 +1078,31 @@
             });
         }
 
+        var gatorAnims= ['gatorpupil', 'gatorface1']
+        for(var i = 0; i < keys.length; i++){
+            this.anims.create({
+                key: gatorAnims[i],
+                frames: this.anims.generateFrameNumbers(gatorAnims[i], { start: 0, end: 12 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }
+
+        var bodies = ['gatorbody']
+        for(var i = 0; i < bodies.length; i++){
+        this.anims.create({
+                key: bodies[i],
+                frames: this.anims.generateFrameNumbers(bodies[i], { start: 0, end: 0 }),
+                frameRate: 10,
+                repeat: -1
+            });
+        }        
+
         var tops = ['blank', 'top1', 'top2', 'top3', 'top4', 'top5', 'top5under', 'top6', 'top6under', 'top7', 'top8', 'top9', 'top10', 'top10under', 'top11', 'top12', 
-                    'topPineapple', 'top13', 'top14', 'top15', 'top16', 'top17', 'top18'];
+                    'topPineapple', 'top13', 'top14', 'top15', 'top16', 'top17', 'top18',
+
+                    'gtop1', 'gtop2', 'gtop2under', 'gtop3', 'gtop3under', 'gtop4', 'gtop4under', 'gtop5', 'gtop6', 'gtop7', 'gtop8', 'gtop9', 'gtop10', 'gtop11', 'gtop12', 
+                    'gtopPineapple', 'gtop13', 'gtop14', 'gtop15', 'gtop16', 'gtop17', 'gtop18' ];
         for(var i = 0; i < tops.length; i++){
             this.anims.create({
                 key: tops[i],
@@ -797,7 +1112,8 @@
             });
         }
 
-        var bottoms = ['bottom1', 'bottom2', 'bottom3', 'bottom4', 'bottom5', 'bottom6', 'bottom7', 'bottom8', 'bottom9'];
+        var bottoms = ['bottom1', 'bottom2', 'bottom3', 'bottom4', 'bottom5', 'bottom6', 'bottom7', 'bottom8', 'bottom9',
+        'gbottom1', 'gbottom2', 'gbottom3', 'gbottom4', 'gbottom5', 'gbottom6', 'gbottom7', 'gbottom8', 'gbottom9'];
         for(var i = 0; i < tops.length; i++){
             this.anims.create({
                 key: bottoms[i],
@@ -809,7 +1125,13 @@
 
         var accessories = ['a0','a1','a2','a3','a4','a5','a6','a7','a8','a9','a10','a11','a12' 
         ,'a13','a14','a15','a16','a17','a18','a19','a20','a21','a22','a23' ,'a24'
-        ,'a25','a26','a27','a28','a29','a30','a31','a32','a33','a34','a35', 'a36'];
+        ,'a25','a26','a27','a28','a29','a30','a31','a32','a33','a34','a35', 'a36',
+
+        'ga0','ga1','ga2','ga3','ga4','ga5','ga6','ga7','ga8','ga9','ga10','ga11','ga12' 
+        ,'ga13','ga14','ga15','ga16','ga17','ga18','ga19','ga20','ga21','ga22','ga23' ,'ga24'
+        ,'ga25','ga26','ga27','ga28','ga29','ga30','ga31','ga32','ga33','ga34','ga35', 'ga36'
+        ];
+        
         for(var i = 0; i < accessories.length; i++){
             this.anims.create({
                 key: accessories[i],
@@ -870,7 +1192,7 @@
 
     function playFace(facekey){
         playerface.anims.play(facekey, true);
-        playereyes.anims.play('pupil', true);
+        playereyes.anims.play(pupilKey, true);
     }
     function setTop(topKey, underTopKey){
         playertop.anims.play(topKey, true);
@@ -902,7 +1224,7 @@
 
     function menuOptions(selection){
         //icon arrays
-        var bodyIcons = [ [], [], [] ];
+        var bodyIcons = [ [caticon,gatoricon], [], [] ];
         var eyeIcons = [
             [normaleyeicon, gotheyeicon, shifteyeicon, sadeyeicon, eyelinericon, wideeyeicon, animeeyeicon, lashesicon, bigeyesicon, nightmareeyesicon],
             [],
@@ -925,9 +1247,31 @@
             [a1icon]
             ];
 
+        var geyeIcons = [
+            [geye1icon],
+            [],
+            []
+        ];
+        var gtopIcons = [ 
+            [gtop1icon, gtop2icon, gtop3icon, gtop4icon, gtop5icon, gtop6icon, gtop7icon, gtop8icon, gtop9icon, gtop10icon, gtop11icon, gtop12icon],
+            [gtopPineappleIcon, gtop13icon, gtop14icon, gtop15icon, gtop16icon, gtop17icon, gtop18icon, gtop19icon],
+            [] 
+        ];
+        var gbottomIcons = [ 
+            [gbottom1icon, gbottom2icon, gbottom3icon, gbottom4icon, gbottom5icon, gbottom6icon, gbottom7icon, gbottom8icon, gbottom9icon],
+            [],
+            []
+         ];
+        var gaccessoriesIcons= [ 
+            [ga0icon,ga2icon,ga3icon,ga4icon,ga5icon,ga6icon,ga7icon,ga8icon,ga9icon,ga10icon,ga11icon,ga12icon],
+            [ga13icon,ga14icon,ga15icon,ga16icon,ga17icon,ga18icon,ga19icon,ga20icon,ga21icon,ga22icon,ga23icon,ga24icon],
+            [ga25icon,ga26icon,ga27icon,ga28icon,ga29icon,ga30icon,ga31icon,ga32icon,ga33icon,ga34icon,ga35icon],
+            [ga1icon]
+            ];
+
         var bgIcons= [ [], [], [] ];
 
-        var allIcons = [bodyIcons, eyeIcons, topIcons, bottomIcons, accessoriesIcons, bgIcons]; 
+        var allIcons = [bodyIcons, eyeIcons, topIcons, bottomIcons, accessoriesIcons, geyeIcons, gtopIcons, gbottomIcons, gaccessoriesIcons, bgIcons, ]; 
 
         var textIcons = [bodytxt, eyestxt, toptxt, bottomtxt, accessoriestxt, bgtext];
         
@@ -991,13 +1335,129 @@
         }
     }
 
-    var currentobj = 'cat';
+    
+    function menuOptionsGator(selection){
+        //icon arrays
+        var bodyIcons = [ [caticon,gatoricon], [], [] ];
+
+        var eyeIcons = [
+            [normaleyeicon, gotheyeicon, shifteyeicon, sadeyeicon, eyelinericon, wideeyeicon, animeeyeicon, lashesicon, bigeyesicon, nightmareeyesicon],
+            [],
+            []
+        ];
+        var topIcons = [ 
+            [top1icon, top2icon, top3icon, top4icon, top5icon, top6icon, top7icon, top8icon, top9icon, top10icon, top11icon, top12icon],
+            [topPineappleIcon, top13icon, top14icon, top15icon, top16icon, top17icon, top18icon],
+            [] 
+        ];
+        var bottomIcons = [ 
+            [bottom1icon, bottom2icon, bottom3icon, bottom4icon, bottom5icon, bottom6icon, bottom7icon, bottom8icon, bottom9icon],
+            [],
+            []
+         ];
+        var accessoriesIcons= [ 
+            [a0icon,a2icon,a3icon,a4icon,a5icon,a6icon,a7icon,a8icon,a9icon,a10icon,a11icon,a12icon],
+            [a13icon,a14icon,a15icon,a16icon,a17icon,a18icon,a19icon,a20icon,a21icon,a22icon,a23icon,a24icon],
+            [a25icon,a26icon,a27icon,a28icon,a29icon,a30icon,a31icon,a32icon,a33icon,a34icon,a35icon,a36icon],
+            [a1icon]
+            ];
+
+
+        var geyeIcons = [
+            [geye1icon],
+            [],
+            []
+        ];
+        var gtopIcons = [ 
+            [gtop1icon, gtop2icon, gtop3icon, gtop4icon, gtop5icon, gtop6icon, gtop7icon, gtop8icon, gtop9icon, gtop10icon, gtop11icon, gtop12icon],
+            [gtopPineappleIcon, gtop13icon, gtop14icon, gtop15icon, gtop16icon, gtop17icon, gtop18icon, gtop19icon],
+            [] 
+        ];
+        var gbottomIcons = [ 
+            [gbottom1icon, gbottom2icon, gbottom3icon, gbottom4icon, gbottom5icon, gbottom6icon, gbottom7icon, gbottom8icon, gbottom9icon],
+            [],
+            []
+         ];
+        var gaccessoriesIcons= [ 
+            [ga0icon,ga2icon,ga3icon,ga4icon,ga5icon,ga6icon,ga7icon,ga8icon,ga9icon,ga10icon,ga11icon,ga12icon],
+            [ga13icon,ga14icon,ga15icon,ga16icon,ga17icon,ga18icon,ga19icon,ga20icon,ga21icon,ga22icon,ga23icon,ga24icon],
+            [ga25icon,ga26icon,ga27icon,ga28icon,ga29icon,ga30icon,ga31icon,ga32icon,ga33icon,ga34icon,ga35icon],
+            [ga1icon]
+            ];
+
+        var bgIcons= [ [], [], [] ];
+
+        var allIcons = [bodyIcons, eyeIcons, topIcons, bottomIcons, accessoriesIcons, geyeIcons, gtopIcons, gbottomIcons, gaccessoriesIcons, bgIcons, ]; 
+
+        var textIcons = [bodytxt, eyestxt, toptxt, bottomtxt, accessoriestxt, bgtext];
+        
+        //accessory index icons
+        var txtelems = [txtone, txttwo, txtthree];
+
+        //body selection
+        if(selection == 1){  
+            currentobj = player;
+            selected(bodytxt, textIcons);
+            pageCtrl(page, bodyIcons.length);
+            console.log('selection 1 page:' + page);
+            setJustOne(allIcons, bodyIcons, page);
+            setAllActivity(txtelems, false);
+        }
+        //eyes selection
+        if(selection == 2){
+            currentobj = playereyes;
+            selected(eyestxt, textIcons);
+            pageCtrl(page, geyeIcons.length);
+            console.log('selection 2 page:' + page);
+            setJustOne(allIcons, geyeIcons, page);
+            setAllActivity(txtelems, false);
+        }
+        //top section
+        if(selection == 3){
+            currentobj = playertop;
+            selected(toptxt, textIcons);
+            pageCtrl(page, gtopIcons.length);
+            console.log('selection 3 page:' + page);
+            setJustOne(allIcons, gtopIcons, page);
+            setAllActivity(txtelems, false);
+        }
+        //bottom section
+        if(selection == 4){
+            currentobj = playerbottom;
+            selected(bottomtxt, textIcons);
+            pageCtrl(page, gbottomIcons.length);
+            console.log('selection 4 page:' + page);
+            setJustOne(allIcons, gbottomIcons, page);
+            setAllActivity(txtelems, false);
+        }
+        //accessories section
+        if(selection == 5){
+            currentobj = playeraccessory;
+            setAllActivity(txtelems, true);
+            selected(accessoriestxt, textIcons);
+            selected(txtelems[accessoryIndex], txtelems);
+            pageCtrl(page, gaccessoriesIcons.length);
+            console.log('selection 5 page:' + page);
+            setJustOne(allIcons, gaccessoriesIcons, page);
+        }
+        //bg section
+        if(selection == 6){
+            //currentobj = bg;
+            selected(bgtext, textIcons);
+            pageCtrl(page, bgIcons.length);
+            console.log('selection 6 page:' + page);
+            setJustOne(allIcons, bgIcons, page);
+            setAllActivity(txtelems, false);
+        }
+    }
+
+    var currentobj = 'catbody';
     var selection = 1;
-    var currentobj;
     var page = 0;
 
     facekey = 'faceblink';
-    bodyKey = 'cat'
+    bodyKey = 'catbody';
+    pupilKey = 'catpupil';
     topKey = 'top1';
     underTopKey = 'blank';
     bottomKey = 'bottom1';
@@ -1009,17 +1469,23 @@
     function update ()
     { 
 
-        menuOptions(selection);               //select section
-        
+        if(bodyKey == 'catbody'){
+            menuOptions(selection);               //select section
+        }
+        if(bodyKey == 'gatorbody'){
+            menuOptionsGator(selection);
+        }
+
         playBody(bodyKey);                    //body
         playFace(facekey);                    //face/ eyes
         setTop(topKey, underTopKey);
         setBottoms(bottomKey);   
         setAccessories(accessoryKey);            
 
-        if(currentobj == playeraccessory){
+        if(currentobj == playeraccessory || topKey == 'toppinapple' || topKey == 'gtoppinapple'){
             currentobj.clearTint();   
         }
+
 
 
     }
